@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style type="text/css">
+    .red {
+      color: red;
+      font-weight: bold;
+    }
+
+    div.red {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h3 class="red">我是标题3里面的文字</h3>
+  <div class="red">我是div..</div>
+  <div>我是div2...</div>
+  <p class="red">我是p</p>
+
+  链接伪类的顺序，a:hover必须置于a:link和a:visited之后，才有效，
+  a:active必须在a：hover之后，才有效。
+  而link、visited两个伪类之间顺序无所谓，谁在前都可以。
+
+  ：link>：visited>：hover>：active
+  ：visited>：link>：hover>：active
+
+  link
+  visited
+  hover
+  active
+</body>
+</html>

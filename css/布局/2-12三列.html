@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      height: 100px;
+      position: fixed;
+      top: 0px;
+      background: #000;
+      color: #fff;
+    }
+
+    .header .logo {
+      float: left;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .header ul {
+      list-style-type: none;
+      float: right;
+    }
+
+    .header ul li {
+      float: left;
+      line-height: 100px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .header ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .main {
+      box-sizing: border-box;
+      padding: 100px 120px 0 120px;
+      width: 100%;
+      min-height: 1000px;
+      background: lightblue;
+    }
+
+    .main .left-col {
+      padding-top: 100px;
+      width: 35%;
+      min-height: 1000px;
+      float: left;
+      box-sizing: border-box;
+    }
+
+    .main .left-col p {
+      padding: 10px;
+    }
+
+    .main .left-col p .highlight {
+      margin: 0 10px 0 0;
+      background: #fe9898;
+    }
+
+    .main .middle-col {
+      padding-top: 100px;
+      width: 35%;
+      min-height: 1000px;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    .main .middle-col p {
+      padding: 10px;
+
+    }
+
+    .main .right-col {
+      box-sizing: border-box;
+      padding-top: 100px;
+      width: 30%;
+      min-height: 900px;
+      float: left;
+      border-left: 5px orange solid;
+    }
+
+    .main .right-col form {
+      margin: 0 0 0 50px;
+    }
+
+    .main .right-col form input {
+      display: block;
+      padding: 10px;
+      margin: 15px 0;
+      background: #fff;
+      width: 100%;
+      border: 1px #999 solid;
+      box-sizing: border-box;
+    }
+
+    .main .right-col form input:nth-child(4) {
+      background: red;
+      color: #fff;
+    }
+
+    .footer {
+      width: 100%;
+      height: 100px;
+      position: fixed;
+      bottom: 0;
+      background: #000;
+      color: #fff;
+    }
+
+    .footer ul {
+      width: 55%;
+      height: 100%;
+      margin: 0 auto;
+      list-style-type: none;
+    }
+
+    .footer ul li {
+      float: left;
+      width: 16.66%;
+      height: 100%;
+      box-sizing: border-box;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <a href="#">
+          <img src="http://climg.mukewang.com/59093e9c00016ce303000100.png" alt="logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">课程</a></li>
+        <li><a href="#">职业路径</a></li>
+        <li><a href="#">实战</a></li>
+        <li><a href="#">猿问</a></li>
+        <li><a href="#">手记</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="left-col">
+        <h2>课程推荐</h2>
+        <p><span class="highlight">职业路径</span>HTML5与CSS3实现动态网页</p>
+        <p><span class="highlight">职业路径</span>零基础入门Android语法和界面</p>
+        <p><span class="highlight">职业路径</span>iOS基础语法与常用控件</p>
+        <p><span class="highlight">职业路径</span>PHP入门开发</p>
+        <p><span class="highlight">职业路径</span>JAVA入门开发</p>
+      </div>
+      <div class="middle-col">
+        <h2>相关课程</h2>
+        <p>HTML CSS JavaScript</p>
+        <P>HTML5 CSS3 Jquery</P>
+        <p>移动端开发 移动端APP开发</p>
+      </div>
+      <div class="right-col">
+        <form action="#">
+          <h2>登录</h2>
+          <input type="text" name="account" placeholder="请输入登录邮箱/手机号">
+          <input type="text" name="password" placeholder="6-16位密码，区分大小写，不能用空格">
+          <input type="submit" value="登录">
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><a href="#">网站首页</a></li>
+        <li><a href="#">企业合作</a></li>
+        <li><a href="#">人才招聘</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">常见问题</a></li>
+        <li><a href="#">友情链接</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

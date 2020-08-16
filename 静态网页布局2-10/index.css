@@ -1,0 +1,426 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑", sans-serif;
+}
+
+/* 顶部 */
+.header {
+  width: 100%;
+  height: 80px;
+  background: #07cbc9;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+}
+
+.header .logo {
+  float: left;
+  margin-left: 100px;
+}
+
+.header .logo img {
+  height: 50px;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.header .nav {
+  float: right;
+  padding-right: 80px;
+}
+
+.header .nav li {
+  float: left;
+  list-style: none;
+}
+
+.header .nav a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 80px;
+}
+
+.header .nav a:hover {
+  background: #fff;
+  color: #036f6e;
+}
+
+.clear {
+  clear: both;
+}
+
+/* banner图 */
+.main {
+  margin-top: 80px;
+}
+
+.main .banner .image {
+  width: 100%;
+  height: 600px;
+  background: no-repeat url("images/banner3.jpg");
+  background-size: 100% 600px;
+}
+
+.main .banner .topLayer {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: #000;
+  opacity: 0;
+  z-index: 1;
+}
+
+.main .banner form {
+  box-sizing: border-box;
+  width: 509px;
+  height: 410px;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  margin-left: -254.5px;
+  z-index: 2;
+}
+
+.main .banner form input {
+  width: 100%;
+  height: 43px;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  margin-top: 20px;
+  background: #000;
+  opacity: 0.4;
+  color: #fff;
+  padding: 0 0 0 10px;
+}
+
+.main .banner form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 119px;
+  border: 2px solid lightgray;
+  margin-top: 20px;
+  background: #000;
+  opacity: 0.4;
+  color: #fff;
+  padding: 10px 0 0 10px;
+}
+
+.main .banner form input[type="submit"] {
+  width: 127px;
+  height: 43px;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  margin-left: -63.5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.main .banner form textarea:hover,
+.main .banner form input:hover {
+  border: 2px solid #07cbc9;
+}
+
+.main .banner form textarea:focus,
+.main .banner form input:focus {
+  outline: #07cbc9;
+}
+
+.main .banner form input[type="submit"]:hover {
+  border: none;
+  background: #07cbc9;
+}
+.main .banner form input[type="submit"]:active {
+  background: #fff;
+  color: #07cbc9;
+  opacity: 0.4;
+}
+
+/* ABOUT */
+.main .about {
+  width: 100%;
+}
+
+.main .about .top {
+  width: 70%;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.main .about .top h2 {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 50px;
+}
+
+.undeline {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: #07cbc9 solid 3px;
+}
+
+.main .about .top p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  color: grey;
+}
+
+.main .about .middle {
+  width: 70%;
+  height: 460px;
+  margin: 0 auto;
+  padding-top: 10px;
+  position: relative;
+}
+
+.main .about .middle .left {
+  width: 20%;
+  float: left;
+}
+
+.main .about .middle .left h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.main .about .middle .left .textLayer {
+  width: 370px;
+  height: 246px;
+  box-sizing: border-box;
+  position: absolute;
+  background: #fff;
+  opacity: 0.5;
+  border: 1px solid red;
+  z-index: 1;
+}
+
+.main .about .middle .left .text {
+  width: 370px;
+  height: 246px;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+  position: absolute;
+  padding: 20px;
+  line-height: 26px;
+  z-index: 4;
+}
+
+.main .about .middle .left .text button {
+  width: 102px;
+  height: 45px;
+  margin-top: 20px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  opacity: 1;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.main .about .middle .left .text button:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+.main .about .middle .left .text button:active {
+  background: #000;
+  color: #fff;
+}
+
+.main .about .middle .center {
+  width: 60%;
+  float: left;
+  text-align: center;
+}
+
+.main .about .middle .center img {
+  width: 568px;
+  height: 380px;
+}
+
+.main .about .middle .right {
+  width: 20%;
+  float: right;
+  text-align: center;
+}
+
+.main .about .middle .right hr {
+  width: 40px;
+  border: 1px solid #07cbc9;
+  margin: 0 auto;
+}
+
+.main .about .middle .right h4 {
+  font-size: 40px;
+}
+
+.main .about .middle .right .faculty,
+.main .about .middle .right .students {
+  width: 238px;
+  height: 144px;
+  border: 1px solid #07cbc9;
+  margin-bottom: 30px;
+  line-height: 72px;
+}
+
+.main .about .bottom {
+  width: 100%;
+  color: #fff;
+}
+
+.main .about .bottom .image,
+.main .about .bottom .text {
+  float: left;
+  width: 25%;
+  height: 300px;
+  box-sizing: border-box;
+  background: #07cbc9;
+}
+
+.main .about .bottom .text {
+  padding: 25px;
+  line-height: 1.5em;
+  position: relative;
+}
+
+.main .about .bottom .text h4 {
+  font-size: 1.5em;
+  padding-bottom: 15px;
+}
+
+.main .about .bottom .text p:nth-child(3) {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.main .about .bottom .text button {
+  width: 102px;
+  height: 45px;
+  background: #000;
+  outline: none;
+  color: #fff;
+  border:1px solid #000;
+  margin: 30px auto;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.main .about .bottom .text button:hover {
+  background: #07cbc9;
+}
+
+.main .about .bottom .text button:active {
+  background: #000;
+}
+
+/* 使用 css 画三角 */
+.rightArrow:after,
+.leftArrow:after {
+  content: '';
+  display: block;
+  border-width: 12px 20px;
+  border-style: solid;
+  border-color: transparent #07cbc9 transparent transparent;
+  position: absolute;
+  /* (300 - 24) / 300/2 */
+  /* top = (div.leftArrow的高度 - 2*border-width) / div.leftArrow的宽度 / 2*/
+  top: 46%;
+}
+
+.leftArrow:after {
+  border-color: transparent #07cbc9 transparent transparent;
+  right: 100%;
+}
+
+.rightArrow:after {
+  border-color: transparent transparent transparent #07cbc9;
+  left: 100%;
+}
+
+.main .about .bottom img {
+  width: 100%;
+  max-height: 300px;
+}
+
+/* GALLERY区 */
+.main .gallery {
+  width: 100%;
+  background: #fff;
+}
+
+.main .gallery .g-bottom,
+.main .gallery .g-top {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main .gallery .g-top h4 {
+  font-size: 40px;
+  text-align: center;
+  padding: 40px 0 20px;
+}
+
+.main .gallery .g-top hr {
+  width: 40px;
+  border: 2px solid #07cbc9;
+  margin: 0 auto;
+}
+
+.main .gallery .g-top p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5em;
+  padding: 10px 0;
+  color: grey;
+}
+
+.main .gallery .g-bottom dl {
+  float: left;
+  width: 31.33%;
+  margin: 1%;
+}
+
+.main .gallery .g-bottom dl dt img {
+  width: 100%;
+  height: 240px;
+}
+
+.main .gallery .g-bottom dl dt {
+  background: red;
+  overflow: hidden;
+}
+
+.main .gallery .g-bottom dl dd {
+  height: 64px;
+  background: #000;
+  position: relative;
+  top: -4px;
+  color: #fff;
+  text-align: left;
+  line-height: 64px;
+  padding-left: 15px;
+}
+
+/* 页脚区 */
+.footer {
+  width: 100%;
+  height: 80px;
+  background: #07cbc9;
+  line-height: 80px;
+  text-align: center;
+  color: #fff;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  本题考察的是html标签的嵌套规则。标签的嵌套规则有：块级标签可包含行内元素和某些块级元素，
+  但是p标签不能包含块级元素；行内元素不能包含块级元素，只能包含其它行内元素
+
+  故正确的说法是：包含行内标签和某些块级标签，但是p标签不能包含块级标签。
+
+  <h1>h1</h1>
+  <ol>
+    <li>
+      ol > li
+      <ul>
+        <li>ul > li</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+    <li>
+      ol > li
+      <ul>
+        <li>ul > li</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+    <li>
+      ol > li
+      <ul>
+        <li>ul > li</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+  </ol>
+
+  页面头部：包含logo、导航、banner图三块
+  页面主体：包含文章内容和链接区两块
+  页面页脚：包含页脚的内容
+
+</body>
+</html>
