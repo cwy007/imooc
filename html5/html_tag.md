@@ -216,3 +216,8 @@ html mainfest="index.manifest"
 
 style
 style scoped
+
+aside 定义侧边栏
+
+embed标签用于定义嵌入的内容，比如插件，比如音视频，
+它里面不需要设置autoplay属性就能在网页加载后播放视频

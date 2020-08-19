@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>background-origin</title>
+        <style>
+          div {
+            width: 400px;
+            height: 200px;
+            border: 30px solid purple;
+            padding: 50px;
+            background: url("http://climg.mukewang.com/582c342b0001fd6507000210.jpg") no-repeat;
+          }
+
+          div:hover {
+            background: url("http://climg.mukewang.com/582c34220001091605000150.jpg") 10px 10px no-repeat;
+            background-origin:content-box;
+          }
+        </style>
+    </head>
+    <body>
+      <div></div>
+    </body>
+</html>
