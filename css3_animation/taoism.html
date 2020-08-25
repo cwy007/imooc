@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>2-5</title>
+    <style type="text/css">
+      div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        border: 1px solid red;
+        border-bottom: 200px solid red;
+        border-radius: 50%;
+
+        transform-origin: 50% 50%;
+        animation-name: rotate;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        /*此处写代码*/
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      div::before {
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        border: 80px solid #fff;
+        border-radius: 50%;
+        background: red;
+        top: 100px;
+        position: relative;
+      }
+
+      div::after {
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        border: 80px solid red;
+        border-radius: 50%;
+        background: #fff;
+        top: -100px;
+        left: 200px;
+        position: relative;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+  </body>
+
+</html>

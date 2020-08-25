@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>径向渐变</title>
+    <style type="text/css">
+        div{
+            width:200px;height:300px;
+            float:left;
+            margin:100px 0 0 100px;
+        }
+        /*补充代码，分别写出4个元素的背景渐变效果*/
+        .div1 {
+          background: -webkit-radial-gradient( 60% 40%, circle closest-side, red, yellow, green, blue);
+          /* background:   -moz-radial-gradient(circle closest-side at 60% 40%, red, yellow, green, blue); */
+          /* background:     -o-radial-gradient(circle closest-side at 60% 40%, red, yellow, green, blue); */
+          /* background:        radial-gradient(circle closest-side at 60% 40%, red, yellow, green, blue); */
+        }
+
+        .div2 {
+          background: -webkit-radial-gradient(60% 40%, circle farthest-side, red, yellow, green, blue);
+          background:   -moz-radial-gradient(circle farthest-side at 60% 40%, red, yellow, green, blue);
+          background:     -o-radial-gradient(circle farthest-side at 60% 40%, red, yellow, green, blue);
+          background:        radial-gradient(circle farthest-side at 60% 40%, red, yellow, green, blue);
+        }
+
+        .div3 {
+          background: -webkit-radial-gradient(60% 40%, circle closest-corner, red, yellow, green, blue);
+          background:   -moz-radial-gradient(circle closest-corner at 60% 40%, red, yellow, green, blue);
+          background:     -o-radial-gradient(circle closest-corner at 60% 40%, red, yellow, green, blue);
+          background:        radial-gradient(circle closest-corner at 60% 40%, red, yellow, green, blue);
+        }
+
+        .div4 {
+          background: -webkit-radial-gradient(60% 40%, circle farthest-corner, red, yellow, green, blue);
+          background:   -moz-radial-gradient(circle farthest-corner at 60% 40%, red, yellow, green, blue);
+          background:     -o-radial-gradient(circle farthest-corner at 60% 40%, red, yellow, green, blue);
+          background:        radial-gradient(circle farthest-corner at 60% 40%, red, yellow, green, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+</body>
+</html>
