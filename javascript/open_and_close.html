@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>打开/关闭页面</title>
+    </head>
+    <body>
+       <input type="button" value="关闭本页面" id="close">
+       <input type="button" value="打开慕课网" id="open">
+       <script type="text/javascript">
+        var open1 = document.getElementById('open');
+        var close1 = document.getElementById('close');
+        open1.onclick = function () {
+          window.open("/Users/chanweiyan/imooc/javascript/open_and_close.html", "慕课网")
+        }
+        close1.onclick = function () {
+          // 只有通过脚本打开的页面，才能通过 close 方法关闭
+          window.close();
+        }
+       </script>
+    </body>
+</html>
