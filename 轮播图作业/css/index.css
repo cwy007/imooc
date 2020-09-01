@@ -15,12 +15,6 @@ ul {
   list-style-type: none;
 }
 
-.active {
-  display: block;
-  background-color: var(--yellow);
-  border-radius: 5px;
-}
-
 .banner {
   width: 1200px;
   height: 540px;
@@ -42,6 +36,11 @@ ul {
   font-size: 22px;
   text-align: center;
   color: var(--grey);
+  border-radius: 5px;
+}
+
+.banner-title li.active {
+  background-color: var(--yellow);
 }
 
 /* 切换项内容 */
@@ -56,20 +55,25 @@ ul {
   height: 460px;
   background-repeat: no-repeat;
   float: left;
+  display: none;
 }
 
-.slide1 {
+.banner-slide.active {
+  display: block;
+}
+
+.banner-slide:nth-child(1) {
   background: url("../img/1.jpg");
 }
 
-.slide2 {
-  background: url("../img/5.jpg");
+.banner-slide:nth-child(2) {
+  background: url("../img/2.jpg");
 }
 
-.slide3 {
+.banner-slide:nth-child(3) {
   background: url("../img/3.jpg");
 }
 
-.slide4 {
+.banner-slide:nth-child(4) {
   background: url("../img/4.jpg");
 }
