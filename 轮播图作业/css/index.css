@@ -19,6 +19,7 @@ ul {
   width: 1200px;
   height: 540px;
   margin: 30px auto 0;
+  cursor: pointer;
 }
 
 /* 切换项标题 */
@@ -41,6 +42,7 @@ ul {
 
 .banner-title li.active {
   background-color: var(--yellow);
+  color: #000;
 }
 
 /* 切换项内容 */
