@@ -1,0 +1,75 @@
+:root {
+  --yellow: #FFCC00;
+  --grey: #666;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  background-color: var(--white);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.active {
+  display: block;
+  background-color: var(--yellow);
+  border-radius: 5px;
+}
+
+.banner {
+  width: 1200px;
+  height: 540px;
+  margin: 30px auto 0;
+}
+
+/* 切换项标题 */
+.banner-title {
+  width: 1198px;
+  height: 78px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.banner-title li {
+  width: 25%;
+  float: left;
+  line-height: 78px;
+  font-size: 22px;
+  text-align: center;
+  color: var(--grey);
+}
+
+/* 切换项内容 */
+.banner-content {
+  width: 1200px;
+  height: 460px;
+  overflow: hidden;
+}
+
+.banner-slide {
+  width: 1200px;
+  height: 460px;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.slide1 {
+  background: url("../img/1.jpg");
+}
+
+.slide2 {
+  background: url("../img/5.jpg");
+}
+
+.slide3 {
+  background: url("../img/3.jpg");
+}
+
+.slide4 {
+  background: url("../img/4.jpg");
+}
