@@ -2,9 +2,12 @@
 .header {
   width: 100%;
   height: 60px;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, .2);
   position: fixed;
+  top: 0;
+  left: 0;
   color: #fff;
+  z-index: 30;
 }
 
 .header__logo {
@@ -58,7 +61,7 @@
 
 .header__nav_custom_button:hover {
   color: #f01400;
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #fff;
 }
 
@@ -74,4 +77,33 @@
   background-color: #f01400;
   left: 0;
   bottom: 0;
+}
+
+/* 第一屏样式 */
+.screen-1 {
+  width: 100%;
+  height: 640px;
+  background: url("../img/sc1.jpg") no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.screen-1__wrap {
+  width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.screen-1__heading {
+  font-size: 40px;
+  padding-top: 238px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.screen-1__desc {
+  font-size: 14px;
+  padding-top: 28px;
+  line-height: 14px;
+  text-align: center;
 }
