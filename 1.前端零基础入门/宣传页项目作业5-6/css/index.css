@@ -287,11 +287,91 @@
   background-color: #f3f5f7;
 }
 
+.screen-4__wrap {
+  width: 1200px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+.screen-4__heading {
+  color: #07111b;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.screen-4__underline {
+  width: 50px;
+  border: 1px solid #f00;
+  margin: 35px 0 24px 575px;
+}
+
+.screen-4__desc {
+  color: #07111b;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.screen-4__tools__item {
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 15px;
+  height: 80px;
+  position: relative;
+}
+
+.screen-4__tools__item:nth-child(1) {
+  background: url("../img/sc4-1.png") no-repeat bottom center;
+}
+
+.screen-4__tools__item:nth-child(2) {
+  background: url("../img/sc4-2.png") no-repeat bottom center;
+}
+
+.screen-4__tools__item:nth-child(3) {
+  background: url("../img/sc4-3.png") no-repeat bottom center;
+}
+
+.screen-4__tools__item:nth-child(4) {
+  background: url("../img/sc4-4.png") no-repeat bottom center;
+}
+
+.screen-4__tools__item__desc {
+  display: block;
+  width: 100%;
+  line-height: 15px;
+  position: absolute;
+  bottom: -40px;
+}
+
 /* 第五屏 */
 .screen-5 {
   width: 100%;
-  height: 640px;
   background-color: #ae171e;
+}
+
+.screen-5__wrap {
+  width: 1200px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+.screen-5__heading {
+  color: #07111b;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.screen-5__underline {
+  width: 50px;
+  margin-left: 600px;
+  border: 1px solid #f00;
 }
 
 /* 第六屏 */
