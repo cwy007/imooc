@@ -80,8 +80,9 @@ function setNavTip(idx, items) {
   items[idx].addEventListener('mouseout', function() {
     var currentIdx = 0;
     for (var i = 0; i < navItems.length; i++) {
-      if (getCls(navItems[i]).indexOf('.header__nav-item_status_active') != -1) {
+      if (getCls(navItems[i]).indexOf('header__nav-item_status_active') != -1) {
         currentIdx = i;
+        console.log("currentIdx" + currentIdx);
         break
       }
     }
@@ -128,12 +129,12 @@ function switchNavItemActiveStatus(idx) {
     delCls(navItems[i], 'header__nav-item_status_active');
   }
   addCls(navItems[idx], 'header__nav-item_status_active');
-  navTip.style.left = idx * 78 + 'px';
 
   for (i = 0; i < outlineItems.length; i++) {
     delCls(outlineItems[i], 'outline__item_status_active');
   }
   addCls(outlineItems[idx], 'outline__item_status_active');
+  navTip.style.left = idx * 78 + 'px';
 }
 
 // 滚动页面播放动画
@@ -173,3 +174,18 @@ var button = getElem('.screen-6__button');
 button.addEventListener('click', function() {
   document.scrollingElement.scrollTop = 0;
 })
+
+// 点击导航连接，显示相应的内容
+function setNavJump(idx, items) {
+  items[idx].addEventListener('click', function() {
+    document.scrollingElement.scrollTop = 640 * idx;
+  })
+}
+
+for (var i = 0; i < navItems.length; i++) {
+  setNavJump(i, navItems);
+}
+
+for (var i = 0; i < outlineItems.length; i++) {
+  setNavJump(i, outlineItems);
+}
