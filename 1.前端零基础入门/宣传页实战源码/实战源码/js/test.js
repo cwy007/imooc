@@ -1,6 +1,5 @@
 
 var screenAnimateElements = {
-
   '.screen-1' : [
     '.screen-1__heading',
     '.screen-1__phone',

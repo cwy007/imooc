@@ -97,7 +97,7 @@ function playScreenAnimateDone(screenCls){
     for(var i=0;i<animateElements.length;i++){
         var element = document.querySelector(animateElements[i]);
         var baseCls = element.getAttribute('class');
-        element.setAttribute('class',baseCls.replace('_animate_init','_animate_done'));    
+        element.setAttribute('class',baseCls.replace('_animate_init','_animate_done'));
     }
 }
 //  第二步附加：初始化第一屏的动画（1. skipScreenAnimateInit 2.跳过 init ）
@@ -113,11 +113,11 @@ var switchNavItemsActive = function( idx){
     console.log(navItems[i]);
     delCls(navItems[i],'header__nav-item_status_active');
      navTip.style.left = 0+'px';
-    
+
   }
   addCls(navItems[idx],'header__nav-item_status_active');
   navTip.style.left = ( idx * 70 )+'px';
-  
+
 
   for(var i=0;i<outLineItems.length;i++){
     delCls(outLineItems[i],'outline__item_status_active');
@@ -131,8 +131,10 @@ window.onscroll = function () {
 
   //   2.1 导航条样式变动
   if( top > 100 ){
+      getElem('.screen-1').style.paddingTop = 80 + 'px';
       addCls( getElem('.header'),'header_status_black' );
   }else{
+      getElem('.screen-1').style.paddingTop = '';
       delCls( getElem('.header'),'header_status_black' );
 
       switchNavItemsActive(0); // 后面添加的，不需要立刻
@@ -151,15 +153,15 @@ window.onscroll = function () {
   }
   if( top > ( 800*2 - 100) ){
     playScreenAnimateDone('.screen-3');
-    switchNavItemsActive(2); 
+    switchNavItemsActive(2);
   }
   if( top > ( 800*3 - 100) ){
     playScreenAnimateDone('.screen-4');
-    switchNavItemsActive(3); 
+    switchNavItemsActive(3);
   }
   if( top > ( 800*4 - 100) ){
     playScreenAnimateDone('.screen-5');
-    switchNavItemsActive(4); 
+    switchNavItemsActive(4);
   }
 }
 
@@ -189,7 +191,7 @@ for(var i=0;i<outLineItems.length;i++){
 var navTip = getElem('.header__nav-tip');
 var setTip = function(idx,lib){
 
-  
+
 
   lib[idx].onmouseover =function(){
     console.log(this,idx);
