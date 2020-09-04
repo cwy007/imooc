@@ -29,7 +29,11 @@ var screenAnimateElements = {
     '.screen-4__tools__item_i_4',
     '.screen-4__heading'
   ],
-  '.screen-5': []
+  '.screen-5': [
+    '.screen-5__heading',
+    '.screen-5__desc',
+    '.screen-5__underline'
+  ]
 }
 
 function setScreenAnimate(screenCls) {

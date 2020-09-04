@@ -453,6 +453,10 @@
   font-size: 12px;
 }
 
+.footer__links__item:hover {
+  color: #f01400;
+}
+
 .footer__copyright {
   color: #787d82;
   font-size: 14px;

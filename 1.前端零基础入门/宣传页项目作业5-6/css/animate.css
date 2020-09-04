@@ -197,3 +197,27 @@
 .screen-4__tools__item_i_4_animate_done {
   transform: scale(1);
 }
+
+/* 第五屏动画 */
+.screen-5__heading {
+  transition: all 1s;
+}
+
+.screen-5__desc,
+.screen-5__underline {
+  transition: all 1s 1s;
+}
+
+.screen-5__heading_animate_init,
+.screen-5__desc_animate_init,
+.screen-5__underline_animate_init {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.screen-5__heading_animate_done,
+.screen-5__desc_animate_done,
+.screen-5__underline_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+}

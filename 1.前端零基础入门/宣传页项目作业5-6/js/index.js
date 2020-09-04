@@ -60,7 +60,11 @@ var screenAnimateElements = {
     '.screen-4__tools',
     '.screen-4__heading'
   ],
-  '.screen-5': []
+  '.screen-5': [
+    '.screen-5__heading',
+    '.screen-5__desc',
+    '.screen-5__underline'
+  ]
 }
 
 // 当鼠标切换导航项时，下划线跟随鼠标移动到相应的导航项上
