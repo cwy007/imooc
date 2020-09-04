@@ -315,6 +315,11 @@
   padding-bottom: 80px;
 }
 
+.screen-4__tools:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
 .screen-4__tools__item {
   float: left;
   width: 25%;
