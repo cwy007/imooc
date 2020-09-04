@@ -320,6 +320,7 @@
   display: block;
   clear: both;
 }
+
 .screen-4__tools__item {
   float: left;
   width: 25%;
@@ -357,26 +358,45 @@
 .screen-5 {
   width: 100%;
   background-color: #ae171e;
+  background: url("../img/sc5.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .screen-5__wrap {
   width: 1200px;
   height: 640px;
   margin: 0 auto;
+  position: relative;
+  color: #fff;
+}
+
+.screen-5__bg {
+  width: 200px;
+  height: 200px;
+  background: url("../img/sc5-1.png") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 100px;
 }
 
 .screen-5__heading {
-  color: #07111b;
   font-size: 40px;
   line-height: 40px;
   text-align: center;
-  padding-top: 90px;
+  padding-top: 355px;
 }
 
 .screen-5__underline {
   width: 50px;
-  margin-left: 600px;
   border: 1px solid #f00;
+  margin: 29px 0 29px 575px;
+}
+
+.screen-5__desc {
+  text-align: center;
+  font-size: 15px;
 }
 
 /* 第六屏 */
