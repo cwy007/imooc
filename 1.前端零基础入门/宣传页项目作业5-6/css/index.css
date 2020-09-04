@@ -402,8 +402,22 @@
 /* 第六屏 */
 .screen-6 {
   width: 100%;
-  height: 200px;
   background-color: #fff;
+}
+
+.screen-6__button {
+  display: block;
+  width: 240px;
+  height: 60px;
+  margin: 70px auto;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+.screen-6__button:hover {
+  color: #f01400;
 }
 
 /* 页脚 */

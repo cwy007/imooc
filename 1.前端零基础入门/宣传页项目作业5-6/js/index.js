@@ -141,3 +141,9 @@ window.addEventListener('scroll', function() {
     playAnimateDone('.screen-6');
   }
 })
+
+// 当点击该按钮时，返回页面的顶部
+var button = getElem('.screen-6__button');
+button.addEventListener('click', function() {
+  document.scrollingElement.scrollTop = 0;
+})
