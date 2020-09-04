@@ -1,0 +1,77 @@
+/* 头部导航 */
+.header {
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  color: #fff;
+}
+
+.header__logo {
+  float: left;
+  width: 110px;
+  height: 40px;
+  padding: 10px 0 10px 50px;
+  margin-left: 10px;
+  line-height: 40px;
+  font-size: 18px;
+  background: url("../img/logo.png") no-repeat left center;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.header__logo:hover {
+  color: #f01400;
+}
+
+.header__nav {
+  width: 480px;
+  margin-right: 20px;
+  float: right;
+  position: relative;
+}
+
+.header__nav-item {
+  float: left;
+  display: block;
+  font-size: 12px;
+  line-height: 60px;
+  color: #fff;
+  padding-right: 30px;
+  transition: all .3s;
+}
+
+.header__nav_custom_button {
+  float: left;
+  display: block;
+  width: 88px;
+  height: 38px;
+  margin: 10px 0;
+  line-height: 38px;
+  border: 1px solid #f01400;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  background-color: #f01400;
+  transition: all .5s;
+}
+
+.header__nav_custom_button:hover {
+  color: #f01400;
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.header__nav-item_status_active {
+  color: #f01400;
+}
+
+/* 导航中下划线样式 */
+.header__nav-tip {
+  position: absolute;
+  width: 48px;
+  height: 2px;
+  background-color: #f01400;
+  left: 0;
+  bottom: 0;
+}
