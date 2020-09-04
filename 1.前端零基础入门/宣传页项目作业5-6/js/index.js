@@ -29,6 +29,7 @@ function addCls(elem, cls) {
 function delCls(elem, cls) {
   setCls(elem, getCls(elem).split(cls).join(' ').replace(/\s+/g, ' '));
 }
+// ***************************上面是一些辅助方法************************************
 
 // 需要设置动画的元素
 var screenAnimateElements = {
@@ -116,4 +117,15 @@ window.addEventListener('scroll', function() {
     playAnimateDone('.screen-3');
   }
 
+  if (top > 640 * 3 - 300) {
+    playAnimateDone('.screen-4');
+  }
+
+  if (top > 640 * 4 - 300) {
+    playAnimateDone('.screen-5');
+  }
+
+  if (top > 640 * 5 - 300) {
+    playAnimateDone('.screen-6');
+  }
 })

@@ -73,8 +73,7 @@
 .header__nav-tip {
   position: absolute;
   width: 48px;
-  height: 2px;
-  background-color: #f01400;
+  border: 1px solid #f01400;
   left: 0;
   bottom: 0;
 }
@@ -129,18 +128,17 @@
   text-align: center;
 }
 
+.screen-2__wrap hr {
+  width: 40px;
+  border: 1px solid #f01400;
+  margin: 35px 0 25px 580px;
+}
+
 .screen-2__desc {
   color: #07111b;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
-  padding-top: 20px;
-}
-
-.underline {
-  display: inline-block;
-  padding-bottom: 35px;
-  border-bottom: 2px solid #f00;
 }
 
 .screen-2__bg_1 {
@@ -182,8 +180,87 @@
 /* 第三屏 */
 .screen-3 {
   width: 100%;
-  height: 640px;
   background-color: #2b333b;
+}
+
+.screen-3__wrap {
+  width: 1200px;
+  height: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.screen-3__langs,
+.screen-3__desc,
+.screen-3__heading {
+  margin-left: 600px;
+  padding-left: 55px;
+}
+
+.screen-3__heading {
+  padding-top: 228px;
+  color: #fff;
+  font-size: 35px;
+}
+
+.screen-3__wrap hr {
+  width: 50px;
+  margin: 32px 0 26px 655px;
+  border: 1px solid #f01400;
+}
+
+.screen-3__desc {
+  color: #fff;
+  font-size: 15px;
+  padding: 0 0 164px 55px;
+}
+
+.screen-3__langs__item {
+  float: left;
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-right: 36px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.screen-3__langs__item:nth-child(1) {
+  border: 4px solid #1f5975;
+  color: #02b0ff;
+}
+
+.screen-3__langs__item:nth-child(2) {
+  border: 4px solid #424d76;
+  color: #4372fd;
+}
+
+.screen-3__langs__item:nth-child(3) {
+  border: 4px solid #6b4146;
+  color: #ff584c;
+}
+
+.screen-3__langs__item:nth-child(4) {
+  border: 4px solid #29535f;
+  color: #22c7e5;
+}
+
+.screen-3__langs__item:nth-child(5) {
+  border: 4px solid #3e4e40;
+  color: #90bd56;
+}
+
+.screen-3__bg {
+  width: 570px;
+  height: 630px;
+  background: url("../img/sc3.png") no-repeat left center;
+  background-size: cover;
+  position: absolute;
+  top: 5px;
+  left: -220px;
+  z-index: 3;
 }
 
 /* 第四屏 */
