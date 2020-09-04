@@ -44,9 +44,16 @@ var screenAnimateElements = {
     '.screen-2__bg_2',
     '.screen-2__bg_1',
     '.screen-2__desc',
-    '.screen-2__heading'
+    '.screen-2__heading',
+    '.screen-2__underline'
   ],
-  '.screen-3': [],
+  '.screen-3': [
+    '.screen-3__bg',
+    '.screen-3__heading',
+    '.screen-3__underline',
+    '.screen-3__desc',
+    '.screen-3__langs'
+  ],
   '.screen-4': [],
   '.screen-5': []
 }

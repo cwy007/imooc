@@ -36,6 +36,7 @@
 
 /* 第二屏动画 */
 
+.screen-2__underline,
 .screen-2__bg_2,
 .screen-2__bg_1,
 .screen-2__desc,
@@ -43,6 +44,7 @@
   transition: all 1s;
 }
 
+.screen-2__underline_animate_init,
 .screen-2__bg_2_animate_init,
 .screen-2__bg_1_animate_init,
 .screen-2__desc_animate_init,
@@ -51,10 +53,104 @@
   transform: translate(0, 100%);
 }
 
+.screen-2__underline_animate_done,
 .screen-2__bg_2_animate_done,
 .screen-2__bg_1_animate_done,
 .screen-2__desc_animate_done,
 .screen-3__heading_animate_done {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+/* 第三屏动画 */
+.screen-3__bg {
+  transition: all 1s ease-out;
+}
+
+.screen-3__underline,
+.screen-3__heading,
+.screen-3__desc {
+  transition: all 1s ease-in;
+}
+
+.screen-3__langs {
+  transition: all 1s 1s;
+}
+
+.screen-3__bg_animate_init {
+  transform: scale(.2);
+}
+
+.screen-3__bg_animate_done {
+  transform: scale(1);
+}
+
+.screen-3__underline_animate_init,
+.screen-3__heading_animate_init,
+.screen-3__desc_animate_init,
+.screen-3__langs_animate_init {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.screen-3__underline_animate_done,
+.screen-3__heading_animate_done,
+.screen-3__desc_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* 定义帧动画 */
+@-webkit-keyframes shake {
+  0% {transform: translate(0, 100%);}
+  25% {transform: translate(0, -30%);}
+  50% {transform: translate(0, 30%);}
+  750% {transform: translate(0, -30%);}
+  100% {transform: translate(0, 0);}
+}
+@keyframes shake {
+  0% {transform: translate(0, 100%);}
+  25% {transform: translate(0, -30%);}
+  50% {transform: translate(0, 30%);}
+  750% {transform: translate(0, -30%);}
+  100% {transform: translate(0, 0);}
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.04);}
+}
+
+@keyframes bounce {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.04);}
+}
+
+/* 使用帧动画 */
+.screen-3__langs_animate_done {
+  opacity: 1;
+  -webkit-animation: shake 2s;
+  animation: shake 2s 1s;
+}
+
+.screen-3__langs__item:before,
+.screen-3__langs__item:after {
+  content: ' ';
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: 0px;
+  border-radius: 50%;
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+
+}
+
+.screen-3__langs__item:before {
+  -webkit-animation: bounce 2s infinite 1s;
+          animation: bounce 2s infinite;
+
 }
