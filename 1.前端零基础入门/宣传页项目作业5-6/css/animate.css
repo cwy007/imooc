@@ -1,0 +1,20 @@
+/* 第一屏动画 */
+.screen-1__desc {
+  transition: all 1s .5s;
+}
+
+.screen-1__heading {
+  transition: all 1s;
+}
+
+.screen-1__desc_animate_init,
+.screen-1__heading_animate_init {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.screen-1__desc_animate_done,
+.screen-1__heading_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+}
