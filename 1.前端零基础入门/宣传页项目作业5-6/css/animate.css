@@ -1,3 +1,18 @@
+/* 顶部导航动画 */
+.header {
+  transition: all 1s;
+}
+
+.header_animate_init {
+  opacity: 0;
+  transform: translate(0, -100%);
+}
+
+.header_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 /* 第一屏动画 */
 .screen-1__desc {
   transition: all 1s .5s;
@@ -15,6 +30,31 @@
 
 .screen-1__desc_animate_done,
 .screen-1__heading_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* 第二屏动画 */
+
+.screen-2__bg_2,
+.screen-2__bg_1,
+.screen-2__desc,
+.screen-2__heading {
+  transition: all 1s;
+}
+
+.screen-2__bg_2_animate_init,
+.screen-2__bg_1_animate_init,
+.screen-2__desc_animate_init,
+.screen-2__heading_animate_init {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.screen-2__bg_2_animate_done,
+.screen-2__bg_1_animate_done,
+.screen-2__desc_animate_done,
+.screen-3__heading_animate_done {
   opacity: 1;
   transform: translate(0, 0);
 }

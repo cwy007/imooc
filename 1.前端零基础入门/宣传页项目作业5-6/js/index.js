@@ -32,11 +32,19 @@ function delCls(elem, cls) {
 
 // 需要设置动画的元素
 var screenAnimateElements = {
+  '.header': [
+    '.header'
+  ],
   '.screen-1': [
     '.screen-1__heading',
     '.screen-1__desc'
   ],
-  '.screen-2': [],
+  '.screen-2': [
+    '.screen-2__bg_2',
+    '.screen-2__bg_1',
+    '.screen-2__desc',
+    '.screen-2__heading'
+  ],
   '.screen-3': [],
   '.screen-4': [],
   '.screen-5': []
@@ -92,5 +100,20 @@ window.addEventListener('load', function () {
 
   // 页面加载完成，1秒后自动播放第一屏动画
   setTimeout(function () { playAnimateDone('.screen-1') }, 1000);
+  // 自动播放顶部导航动画
+  setTimeout(function () { playAnimateDone('.header') }, 1000);
 });
 
+// 滚动页面播放动画
+window.addEventListener('scroll', function() {
+  var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+  if (top > 640 * 1 - 300) {
+    playAnimateDone('.screen-2');
+  }
+
+  if (top > 640 * 2 - 300) {
+    playAnimateDone('.screen-3');
+  }
+
+})
