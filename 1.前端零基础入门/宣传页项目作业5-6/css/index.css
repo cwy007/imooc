@@ -2,7 +2,7 @@
 .header {
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .5);
   position: fixed;
   top: 0;
   left: 0;
@@ -106,4 +106,110 @@
   padding-top: 28px;
   line-height: 14px;
   text-align: center;
+}
+
+/* 第二屏 */
+.screen-2 {
+  width: 100%;
+  background-color: #f3f5f7;
+}
+
+.screen-2__wrap {
+  width: 1200px;
+  height: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.screen-2__heading {
+  color: #07111b;
+  font-size: 40px;
+  line-height: 40px;
+  padding-top: 86px;
+  text-align: center;
+}
+
+.screen-2__desc {
+  color: #07111b;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.underline {
+  display: inline-block;
+  padding-bottom: 35px;
+  border-bottom: 2px solid #f00;
+}
+
+.screen-2__bg_1 {
+  width: 275px;
+  height: 380px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -187.5px;
+  background: url("../img/sc2-1.png") no-repeat center bottom;
+  background-size: cover;
+  z-index: 4;
+}
+
+.screen-2__bg_2 {
+  width: 266px;
+  height: 205px;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -32px;
+  background: url("../img/sc2-2.png") no-repeat center bottom;
+  background-size: cover;
+  z-index: 3;
+}
+
+.screen-2__bg_3 {
+  width: 750px;
+  height: 361px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -375px;
+  background: url("../img/sc2.png") no-repeat center bottom;
+  background-size: cover;
+  z-index: 2;
+}
+
+/* 第三屏 */
+.screen-3 {
+  width: 100%;
+  height: 640px;
+  background-color: #2b333b;
+}
+
+/* 第四屏 */
+.screen-4 {
+  width: 100%;
+  height: 640px;
+  background-color: #f3f5f7;
+}
+
+/* 第五屏 */
+.screen-5 {
+  width: 100%;
+  height: 640px;
+  background-color: #ae171e;
+}
+
+/* 第六屏 */
+.screen-6 {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+
+/* 页脚 */
+.footer {
+  width: 100%;
+  height: 106px;
+  background-color: #000;
 }
