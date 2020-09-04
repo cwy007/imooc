@@ -82,7 +82,6 @@ function setNavTip(idx, items) {
     for (var i = 0; i < navItems.length; i++) {
       if (getCls(navItems[i]).indexOf('header__nav-item_status_active') != -1) {
         currentIdx = i;
-        console.log("currentIdx" + currentIdx);
         break
       }
     }
@@ -148,24 +147,19 @@ window.addEventListener('scroll', function() {
     switchNavItemActiveStatus(0);
   }
 
-  if (top > 640 * 2 - 300) {
+  if (top > 640 * 2 - 360) {
     playAnimateDone('.screen-3');
     switchNavItemActiveStatus(2);
   }
 
-  if (top > 640 * 3 - 280) {
+  if (top > 640 * 3 - 300) {
     playAnimateDone('.screen-4');
     switchNavItemActiveStatus(3);
   }
 
-  if (top > 640 * 4 - 300) {
+  if (top > 640 * 4 - 580) {
     playAnimateDone('.screen-5');
     switchNavItemActiveStatus(4);
-  }
-
-  if (top > 640 * 5 - 200) {
-    playAnimateDone('.screen-6');
-    switchNavItemActiveStatus(5);
   }
 })
 

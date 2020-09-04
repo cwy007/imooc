@@ -56,13 +56,14 @@
   text-align: center;
   color: #fff;
   background-color: #f01400;
-  transition: all .5s;
 }
 
 .header__nav_custom_button:hover {
-  color: #f01400;
-  background-color: #fff;
-  border: 1px solid #fff;
+  box-shadow: 0 0 15px 1px #f01400;
+}
+
+.header__nav_custom_button:active {
+  box-shadow: 0 0 0 0 #f01400;
 }
 
 .header__nav-item_status_active {
@@ -468,6 +469,7 @@
   position: fixed;
   top: 50%;
   right: 0;
+  margin-top: -140px;
   background-color: #fff;
 }
 

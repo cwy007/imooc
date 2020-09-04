@@ -87,7 +87,6 @@ window.onload = function () {
     }
     setScreenAnimateInit(k);
   }
-  console.log('onload')
 
 }
 // 第二步：滚动条设置
