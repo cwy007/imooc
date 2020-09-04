@@ -70,6 +70,7 @@ var screenAnimateElements = {
 // 当鼠标切换导航项时，下划线跟随鼠标移动到相应的导航项上
 var navItems = getAllElem('.header__nav-item');
 var navTip = getElem('.header__nav-tip');
+var outlineItems = getAllElem('.outline__item');
 
 function setNavTip(idx, items) {
   items[idx].addEventListener('mouseover', function() {
@@ -121,28 +122,49 @@ window.addEventListener('load', function () {
   setTimeout(function () { playAnimateDone('.header') }, 1000);
 });
 
+// 根据页面显示的内容，选中对应的导航
+function switchNavItemActiveStatus(idx) {
+  for (i = 0; i < navItems.length; i++) {
+    delCls(navItems[i], 'header__nav-item_status_active');
+  }
+  addCls(navItems[idx], 'header__nav-item_status_active');
+  navTip.style.left = idx * 78 + 'px';
+
+  for (i = 0; i < outlineItems.length; i++) {
+    delCls(outlineItems[i], 'outline__item_status_active');
+  }
+  addCls(outlineItems[idx], 'outline__item_status_active');
+}
+
 // 滚动页面播放动画
 window.addEventListener('scroll', function() {
   var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
   if (top > 640 * 1 - 300) {
     playAnimateDone('.screen-2');
+    switchNavItemActiveStatus(1);
+  } else {
+    switchNavItemActiveStatus(0);
   }
 
   if (top > 640 * 2 - 300) {
     playAnimateDone('.screen-3');
+    switchNavItemActiveStatus(2);
   }
 
-  if (top > 640 * 3 - 300) {
+  if (top > 640 * 3 - 280) {
     playAnimateDone('.screen-4');
+    switchNavItemActiveStatus(3);
   }
 
   if (top > 640 * 4 - 300) {
     playAnimateDone('.screen-5');
+    switchNavItemActiveStatus(4);
   }
 
-  if (top > 640 * 5 - 300) {
+  if (top > 640 * 5 - 200) {
     playAnimateDone('.screen-6');
+    switchNavItemActiveStatus(5);
   }
 })
 

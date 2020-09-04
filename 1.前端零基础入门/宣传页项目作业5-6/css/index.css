@@ -462,3 +462,34 @@
   font-size: 14px;
   line-height: 14px;
 }
+
+/* 右侧大纲导航样式 */
+.outline {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background-color: #fff;
+}
+
+.outline__item {
+  display: block;
+  width: 48px;
+  height: 30px;
+  color: #93999f;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  margin: 10px;
+  padding: 15px 0 0;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.outline__item:nth-child(1) {
+  border-top: none;
+  margin-top: 0;
+}
+
+.outline__item_status_active,
+.outline__item:hover {
+  color: #f01400;
+}
