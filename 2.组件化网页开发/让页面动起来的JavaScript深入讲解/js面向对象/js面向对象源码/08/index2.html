@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+// 关键词
+//call apply
+/*
+function add(a,b){
+	alert(a+b);
+}
+function subs(a,b){
+	alert(a-b);
+}
+//add.call(subs,5,3); // subs-->add  ===>add(5,3)  subs只能引用一个存在的对象
+add.apply(subs,[5,3]);
+*/
+function animal(){
+	this.name = "ani";
+	this.showName = function(){
+		alert(this.name);
+	}
+}
+function cat(){
+	this.name = "cat";
+}
+var an = new animal();
+var c = new cat();
+//an.showName.call(c,","); // 通过call方法，将showName--》cat使用了
+an.showName.apply(c,[]);
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+</body>
+</html>

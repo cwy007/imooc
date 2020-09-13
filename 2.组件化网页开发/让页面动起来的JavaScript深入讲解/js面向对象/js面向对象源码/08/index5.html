@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+// 关键词
+//this:
+//this 可以在函数内部定义属性/变量
+/*
+function test(){
+	this.x = 1; //this全局变量 global  == 》 x=1
+	alert(this.x);
+}
+test();
+
+var x = 1;
+function test(){
+	this.x = 0 //改变了 全局变量 x 值
+}
+test();
+alert(x);
+*/
+// 作为方法调用 --》 构造函数内 this指当前对象
+/*
+function test(){
+	this.name = "zhangsan"; //this表示当前对象 --》 t
+	this.age = 18;
+}
+var t = new test();
+alert(t.name);
+*/
+//在call  apply  this第一个参数
+var x = 0;
+function test(){
+	alert(this.x)
+}
+var o = {};
+o.x = 1;
+o.m = test
+//o.m.apply(); // 0
+o.m.apply(o); //1;
+
+</script>
+
+<body>
+</body>
+</html>

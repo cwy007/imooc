@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+// 关键词
+//delete 删除对象的属性：
+function fun(){
+	this.name = "zhangsan";
+	this.say = function(){
+		alert(this.name);
+	}
+}
+var obj = new fun();
+/*
+alert(obj.name);
+delete obj.name; //删除name属性
+alert(obj.name);//undefined 
+*/
+
+var demo = "lisi";
+alert(demo);
+delete demo; //删除不了变量
+alert(demo);
+//注意：delete 不能删除原型链中的属性和变量
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+</body>
+</html>

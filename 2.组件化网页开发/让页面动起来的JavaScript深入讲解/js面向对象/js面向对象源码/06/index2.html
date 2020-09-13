@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+// js 继承：
+var person = function(){};
+person.prototype.say = function(){
+	alert("天气挺好");
+}
+person.prototype.gongzi = 500;
+
+var programmer = function(){};
+programmer.prototype = new person();
+programmer.prototype.wcd = function(){
+	alert("明天天气也不错");
+}
+programmer.prototype.gongzi=1000;
+
+
+var p = new programmer();
+//p.say(); //可以调用
+//p.wcd();
+alert(p.gongzi);
+// var p = new programmer();  p.__proto__ = programmer.prototype   = new person();
+//var p1 = new person();   programmer.prototype = p1
+// p.say(); p.__proto__ --> programmer.prototype ==p1 --->p1.__proto__  ==person.prototype.say();
+//原型链实现过程 *** 
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+</body>
+</html>

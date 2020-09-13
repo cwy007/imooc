@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+//闭包 全局变量在函数内部可以访问
+function f1(){
+	var n = 999;
+	nAdd = function(){
+		n = n+1;
+	}
+	function f2(){
+		alert(n);
+	}
+	return f2;
+}
+var rs =f1();
+rs();// 999
+nAdd(); // --->执行了
+rs();// 1000
+// 闭包的优缺点
+//优点： 有利于封装，可以访问局部变量
+//缺点： 内存占用浪费严重，内存泄漏
+</script>
+<body>
+</body>
+</html>

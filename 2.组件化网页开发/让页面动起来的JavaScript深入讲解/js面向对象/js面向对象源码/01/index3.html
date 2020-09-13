@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+//闭包 全局变量在函数内部可以访问
+function a(){
+	var i = 0;
+	function b(){
+		alert(++i);
+	}
+	return b;
+}
+var c = a();
+c(); //1
+//特点： 函数b 实在a内嵌套的，函数a需要返回函数b
+//用途： 1 读取函数内部变量 2，让i 变量的值 保留在内存中
+
+
+</script>
+<body>
+</body>
+</html>

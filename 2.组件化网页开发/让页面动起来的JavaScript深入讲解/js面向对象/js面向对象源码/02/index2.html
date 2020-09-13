@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+//构造函数：
+function person(name,sex,age){
+	this.name = name;  //this.name属性     name参数 习惯上 属性名称==参数
+	this.sex  = sex;
+	this.age  = age;
+	this.show = function(){
+		alert(this.name+"---"+this.sex+"---"+this.age);
+	}
+}
+var obj1 = new person("zhangsan","nan",18);
+//alert(obj1.sex);
+obj1.show();
+var obj2 = new person("lisi","nv",20);
+obj2.show();
+//注意： this 代表当前对象，obj1和obj2两者之间是独立的，函数内部只能用this访问属性和方法
+</script>
+<body>
+</body>
+</html>

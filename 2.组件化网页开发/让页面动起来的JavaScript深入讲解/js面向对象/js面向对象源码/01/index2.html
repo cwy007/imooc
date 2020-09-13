@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+//闭包 全局变量在函数内部可以访问
+/*
+var n = 999;
+function f1(){
+	alert(n); //访问到全局n
+}
+f1();
+*/
+function f1(){
+	var n = 999; //函数内var 声明的变量 局部变量，省略var 是一个全局变量
+}
+f1();
+alert(n); //n 没有定义
+//js ---》 在f1 里面 在定义一个函数
+
+
+
+
+</script>
+<body>
+</body>
+</html>

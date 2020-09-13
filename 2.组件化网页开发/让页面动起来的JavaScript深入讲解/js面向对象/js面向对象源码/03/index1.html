@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+//原型模式
+function test(){
+}
+//alert(test.prototype instanceof Object); //自带该对象 prototype是Object子对象
+test.prototype.color 	= "red";
+test.prototype.heights 	= "1.7";
+test.prototype.widths 	= "1.2";	
+test.prototype.showInfo 			= function(){
+	alert(this.color+"---"+this.heights+"---"+this.widths);
+}
+test.prototype.getinfo 			= function(){
+	alert("aaaaa");
+}
+var car1 = new test();
+car1.getinfo();
+</script>
+
+<body>
+</body>
+</html>

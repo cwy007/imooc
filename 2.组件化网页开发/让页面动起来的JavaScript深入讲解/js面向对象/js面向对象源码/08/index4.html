@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+// 关键词
+//arguments: 每个函数都有一个 Arguments对象的实例arguments，引用函数的参数（实参）
+// 可以用数组下标方式引用arguments元素
+//arguments.length,参数个数
+//arguments.callee 引用函数自身
+function test(a,b,c){
+	//alert(arguments.length);
+	//alert(arguments[1]); //arguments如果是表示参数，可以遍历的
+	alert(arguments.callee);
+}
+test(1,2,3);
+
+
+
+
+
+
+</script>
+
+<body>
+</body>
+</html>
