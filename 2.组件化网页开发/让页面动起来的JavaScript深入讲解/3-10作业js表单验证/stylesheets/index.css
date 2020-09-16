@@ -7,9 +7,10 @@ a {
   text-decoration: none;
 }
 
-body, header, nav, div, span, ul, li {
+body, header, nav, div, span, ul, li, h2 {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 ul {
@@ -28,9 +29,15 @@ ul {
   clear: both;
 }
 
-body {
+html {
+  position: relative;
+  min-height: 100%;
   min-width: 1200px;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,"Microsoft Yahei",微软雅黑;
+  margin-bottom: 100px;
 }
 
 /* 头部 */
@@ -141,19 +148,168 @@ body {
 
 /* 主体部分 */
 
+.main {
+  width: 100%;
+}
+
+.main .main-content {
+  width: 1200px;
+  margin: 0 auto;
+  font-weight: 300;
+  color: #2e2929;
+  font-size: 16px;
+}
+
+.main-content .position {
+  padding: 10px;
+}
+
+.main-content .position span,
+.main-content .position a {
+  color: #808388;
+}
+.main-content .signup-form {
+  height: 600px;
+  border-radius: 10px;
+  border: 1px solid var(--orange);
+  position: relative;
+  margin: 0 10px 200px;
+}
+
+.main-content .signup-form .title {
+  background-color: var(--orange);
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  border-radius: inherit;
+}
+
+.main-content .signup-form .input-group {
+  margin-left: 260px;
+  padding: 10px 0;
+  font-size: 14px;
+  position: relative;
+}
+
+.main-content .signup-form .input-group:nth-child(2) {
+  padding-top: 50px;
+}
+
+/* 添加星号 */
+.main-content .signup-form .input-group:before {
+  content: '*';
+  color: var(--orange);
+  position: absolute;
+  left: -14px;
+}
+
+/* 去掉邮箱前面的星号‘*’ */
+.main-content .signup-form .input-group:nth-child(8):before {
+  content: '';
+}
+
+.main-content .signup-form .input-group label {
+  width: 70px;
+  text-align: justify;
+  float: left;
+}
+
+.main-content .signup-form .input-group label:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.main-content .signup-form .input-group input,
+.main-content .signup-form .input-group select {
+  width: 220px;
+  box-sizing: border-box;
+}
+
+.main-content .signup-form .input-group .tips {
+  color: var(--orange);
+  margin-left: 10px;
+  height: 21px;
+}
+
+.main-content .signup-form .input-group .tips .color {
+  display: inline-block;
+  width: 40px;
+  height: 6px;
+  background-color: #dcdcdc;
+  margin-bottom: 3px;
+}
+
+.main-content .signup-form .input-group .tips .color:nth-child(1) {
+  background-color: red;
+}
+
+.main-content .signup-form .input-group .tips span.name-rule {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main-content .signup-form .rules {
+  font-size: 14px;
+  padding: 10px 0;
+  margin-left: 330px;
+}
+
+.main-content .signup-form .rules input[type="checkbox"] {
+  margin-left: 18px;
+}
+
+.main-content .signup-form .rules a {
+  color: #3b89e5;
+}
+
+.main-content .signup-form .btns input[type="button"] {
+  width: 200px;
+  background-color: var(--orange);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+  margin: 40px 0 0 380px;
+  padding: 5px 0;
+}
+
+/* 姓名填写规则 */
+
+.input-group:nth-child(5) .tips:hover + .name-rule-content {
+  display: block;
+}
+
+.name-rule-content {
+  width: 470px;
+  height: 280px;
+  position: absolute;
+  top: 27px;
+  left: 406px;
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 34px;
+  border: 1px solid var(--blue);
+  padding: 0 15px;
+  color: #666;
+  z-index: 4;
+  display: none;
+}
+
 /* 底部 */
 .footer {
   background-color: #dcdcdc;
   border-top: 2px solid var(--blue);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
   text-align: center;
   font-size: 14px;
   color: #aaa;
   line-height: 30px;
   padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  z-index: -20;
 }
 
 .footer .links a {

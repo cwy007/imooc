@@ -42,7 +42,101 @@
 
   <!-- 主体部分 -->
   <section class="main">
+    <div class="main-content">
+      <div class="position">
+        您现在的位置：
+        <a href="javascript:;">客运首页</a>
+        <span>></span>
+        <a href="javascript:;">注册</a>
+      </div>
 
+      <form action="#" class="signup-form">
+        <h2 class="title">账户信息</h2>
+        <div class="input-group">
+          <label for="username">用户名</label>：
+          <input type="text" id="username" placeholder="用户名设置成功后不可修改">
+          <span class="tips">6-30位字母、数字或“_”，字母开头</span>
+        </div>
+
+        <div class="input-group">
+          <label for="password">登录密码</label>：
+          <input type="password" id="password" placeholder="6-20位字母、数字或符号">
+          <span class="tips">
+            <span class="color"></span>
+            <span class="color"></span>
+            <span class="color"></span>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <label for="password">确认密码</label>：
+          <input type="password " id="password" placeholder="再次输入您的登录密码">
+          <span class="tips"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="name-zh-cn">姓名</label>：
+          <input type="text" id="name-zh-cn" placeholder="请输入姓名">
+          <span class="tips">
+            <span class="name-rule">姓名填写规则</span>
+          </span>
+          <ul class="name-rule-content">
+            <li>1.确认姓名中生僻字无法输入时，可用生僻字拼音或同音字替代。</li>
+            <li>2.输入姓名保存后，遇有系统无法正确显示的汉字，可用该汉字的拼音或同音字重新修改后保存。</li>
+            <li>3.姓名中有繁体字无法输入时，可用简体替代。</li>
+            <li>4.姓名较长，汉字与英文字符合计超过30个（1个汉字算2个字符）的，需按姓名中第一个汉字或英文字符开始按顺序连续输入30个字符（空格字符不输入），其中英文字符输入时不区别大小写</li>
+          </ul>
+        </div>
+
+        <div class="input-group">
+          <label for="id-type">证件类型</label>：
+          <select name="id-type" id="id-type">
+            <option value="id2">二代身份证</option>
+            <option value="hongkong-macao">港澳通行证</option>
+            <option value="taiwai">台湾通行证</option>
+            <option value="passport">护照</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="id-num">证件号码</label>：
+          <input type="text" id="id-num" placeholder="再次输入您的证件号码">
+          <span class="tips"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="email">邮箱</label>：
+          <input type="email" id="email" placeholder="请正确填写邮箱地址">
+          <span class="tips"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="telephone">手机号码</label>：
+          <input type="tel" id="telephone" placeholder="再次输入您的手机号码">
+          <span class="tips">请正确填写手机号码，稍后将向该手机号码发送短信验证码</span>
+        </div>
+
+        <div class="input-group">
+          <label for="passenger-type">证件类型</label>：
+          <select name="passenger-type" id="passenger-type">
+            <option value="adult">成人</option>
+            <option value="child">儿童</option>
+            <option value="student">学生</option>
+            <option value="disabled-soldier">残疾军人</option>
+            <option value="disabled-policeman">伤残人民警察</option>
+          </select>
+        </div>
+
+        <div class="rules">
+          <input type="checkbox" name="read-and-agree">
+          我已阅读并同意遵守<a href="javascript:;">《中国铁路客户服务中心网站服务条款》</a>
+        </div>
+
+        <div class="btns">
+          <input type="button" value="下一步">
+        </div>
+      </form>
+    </div>
   </section>
 
   <!-- 底部 -->
