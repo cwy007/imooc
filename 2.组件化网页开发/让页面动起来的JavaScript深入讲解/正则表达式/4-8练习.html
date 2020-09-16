@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用户注册</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tip {
+      color: red;
+    }
+
+    .container {
+      background-color: #EEEEEE;
+    }
+
+    .container .header {
+      width: 100%;
+      height: 40px;
+      color: #fff;
+      background-color: #3092D1;
+      line-height: 40px;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .container .content {
+      width: 1200px;
+      margin: 60px auto;
+    }
+
+    label {
+      display: inline-block;
+      width: 20%;
+      text-align: right;
+    }
+
+    .input-group > input, .input-group > select {
+      width: 40%;
+      height: 30px;
+      margin-top: 30px;
+    }
+
+    .btns {
+      text-align: center;
+    }
+    input[type="button"] {
+      background-color: #3092D1;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 20px;
+      margin: 50px 0 50px -20%;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">用户注册</div>
+    <div class="content">
+      <div class="input-group">
+        <label for="username">用户名：</label>
+        <input type="text" id="username">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="password">登录密码：</label>
+        <input type="password" id="password">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="password_confirm">确认密码：</label>
+        <input type="password" id="password_confirm">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="realname">姓名：</label>
+        <input type="text" id="realname">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="sex">性别：</label>
+        <select name="sex" id="sex">
+          <option value="male">男</option>
+          <option value="female">女</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="idnum">身份证号码：</label>
+        <input type="text" id="idnum">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="email">邮箱：</label>
+        <input type="email" id="email">
+        <span class="tip"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="telephone">手机号码：</label>
+        <input type="text"" id="telephone">
+        <span class="tip"></span>
+      </div>
+
+      <div class="btns">
+        <input type="button" value="提交" id="submit">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function init() {
+      function getElem(selector) {
+        return document.querySelector(selector);
+      }
+
+      var inputs = {
+        username: getElem('#username'),
+        password: getElem('#password'),
+        password_confirm: getElem('#password_confirm'),
+        realname: getElem('#realname'),
+        idnum: getElem('#idnum'),
+        email: getElem('#email'),
+        telephone: getElem('#telephone')
+      }
+
+      var patterns = {
+        username: /^[a-zA-Z]\w{5,19}$/,
+        password: /^\S{6,18}$/,
+        password_confirm: /^\S{6,18}$/,
+        realname: /^[\u4e00-\u9fa5]{2,4}$/,
+        idnum: /^\d{15}$|^\d{17}[0-9x]$/,
+        email: /^[a-z0-9]+(?:[._-][a-z0-9]+)*@[a-z0-9]+(?:[._-][a-z0-9]+)*\.[a-z]{2,4}$/i,
+        telephone: /^(13[0-9]|15[0-35-9]|18[025-9])[0-9]{8}$/
+      }
+
+      var errMsgs = {
+        username: '6-20位字母、数字或“_”,字母开头',
+        password: '6-18位，包括数字字母或符号，中间不能有空格',
+        password_confirm: '请设置密码或密码不一致',
+        realname: '真实姓名为两位到四位的中文',
+        idnum: '请输入18位的身份证号码',
+        email: '邮箱格式不正确',
+        telephone: '电话号码格式不正确'
+      }
+
+      function checkFormat(k) {
+        return function() {
+          if (k == 'password_confirm') {
+            if (getElem('#password').value != getElem('#password_confirm').value){
+              getElem('#' + k + ' ~ ' + '.tip').innerHTML = errMsgs[k];
+              return false;
+            };
+          }
+
+          if (patterns[k].test(inputs[k].value)) {
+            getElem('#' + k + ' ~ ' + '.tip').innerHTML = 'OK';
+            return true;
+          } else {
+            getElem('#' + k + ' ~ ' + '.tip').innerHTML = errMsgs[k];
+            return false;
+          }
+        }
+      }
+
+      for (var k in inputs) {
+        inputs[k].onblur = checkFormat(k);
+      }
+
+      getElem('#submit').onclick = function() {
+        var results = [];
+        for (var k in inputs) {
+          results.push(checkFormat(k)());
+        }
+        if (!results.includes(false)) {
+          alert("验证成功");
+        }
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

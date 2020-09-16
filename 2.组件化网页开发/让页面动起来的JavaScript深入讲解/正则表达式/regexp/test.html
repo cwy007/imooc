@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" value="\d" id="test">
+    <script>
+      var test = document.getElementById('test');
+
+      console.log(test.value); // 内存中的值为 '\d'
+      console.log(typeof test.value); // string
+      console.log(new RegExp(test.value)); // /\d/
+      console.log(new RegExp('\d')); // /d/
+
+      var a = test.value;
+      var b = "\d";    // 这表示以字面量的形式定义字符串; 反斜杠'\'是用来转义特殊字符的：‘\\n => \n, \\r => \r’
+      var c = "\\d";
+      console.log(a);  //  内存中的值为 \d
+      console.log(b);  //  内存中的值为 d
+      console.log(c);  //  内存中的值为 \d
+    </script>
+  </body>
+</html>
