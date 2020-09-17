@@ -272,13 +272,23 @@ body {
 
 .main-content .signup-form .btns input[type="button"] {
   width: 200px;
+  border: 1px solid var(--orange);
   background-color: var(--orange);
-  border: none;
   cursor: pointer;
   color: #fff;
   border-radius: 5px;
   margin: 40px 0 0 380px;
   padding: 5px 0;
+  outline: none;
+}
+
+.main-content .signup-form .btns input[type="button"]:hover {
+  background-color: #fff;
+  color: var(--orange);
+}
+.main-content .signup-form .btns input[type="button"]:active {
+  background-color: var(--orange);
+  color: #fff;
 }
 
 /* 姓名填写规则 */
