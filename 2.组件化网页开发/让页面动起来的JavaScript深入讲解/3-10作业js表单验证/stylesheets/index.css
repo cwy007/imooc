@@ -282,11 +282,6 @@ body {
 }
 
 /* 姓名填写规则 */
-
-.input-group:nth-child(5) .tips:hover + .name-rule-content {
-  display: block;
-}
-
 .name-rule-content {
   width: 470px;
   height: 280px;
