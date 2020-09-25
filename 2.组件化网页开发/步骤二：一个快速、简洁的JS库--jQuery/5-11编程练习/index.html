@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+  <title>5-11编程练习</title>
+  <script src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+    <style>
+    *{
+      padding:0;
+      margin:0;
+      border:0;
+    }
+    /*此处填写css样式*/
+/* ******************************* 布局 *********************************** */
+.clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.top {
+  height: 30px;
+  background: #f5f5f5;
+}
+
+.header {
+  height: 92px;
+  background-color: #fff;
+}
+
+.nav {
+  height: 36px;
+  background-color: #60bff2;
+}
+
+/* sticky footer */
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: 70px;
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: #eceef2;
+}
+
+/* ******************************* ui 基本样式 *********************************** */
+/* 基本样式 */
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+/* #top 模块内样式 */
+.top {
+  line-height: 30px;
+  font-size: 13px;
+  color: #868686;
+}
+
+.top .call {
+  float: left;
+  padding-left: 20px;
+  background: url(http://climg.mukewang.com/58c61b9d0001e02d00170017.png) no-repeat center left;
+}
+
+.top .welcome {
+  float: right;
+}
+
+.top .login,
+.top .signup,
+.top .help-center {
+  color: #2da5e1;
+  padding-left: 10px;
+}
+
+/* #header 模块内样式 */
+.header .logo {
+  width: 402px;
+  height: 74px;
+  padding: 9px 0;
+  display: inline-block;
+}
+
+.header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header .search {
+  width: 326px;
+  height: 38px;
+  position: absolute;
+  right: 0;
+  top: 29px;
+  background-color: orange;
+}
+
+/* #nav 模块内样式 */
+.nav .link {
+  float: left;
+  margin-left: 30px;
+  line-height: 36px;
+  color: #fff;
+  font-size: 16px;
+  min-width: 90px;
+  text-align: center;
+}
+
+.nav .link.right {
+ float: right;
+}
+
+.nav .link_focus {
+  background-color: #1fa4f0;
+  color: #fff;
+}
+
+.nav a:hover {
+  color: #1fa4f0;
+}
+
+/* footer */
+.footer {
+  line-height: 70px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+/* content */
+.favorite-department {
+  width: 982px;
+  border: 1px solid #dcdddd;
+  margin: 51px 0 18px 0;
+  position: relative;
+  border-top: 2px solid #49a5d7;
+  padding: 6px 0px 6px 18px;
+}
+
+.favorite-department .caption {
+  width: 137px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fefefe;
+  position: absolute;
+  top: -32px;
+  left: 0;
+  padding-left: 20px;
+  background: url(http://climg.mukewang.com/58c61a4f0001967a01380030.jpg) center left no-repeat;
+}
+
+.favorite-department .list {
+  padding-right: 202px;
+}
+
+.favorite-department .list .item {
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #555455;
+  float: left;
+  text-align: left;
+}
+
+.favorite-department .list_hidden {
+  display: none;
+}
+
+.favorite-department .list_hidden_toggle {
+  font-size: 12px;
+  color: blue;
+  text-decoration: underline;
+  position: absolute;
+  top: 38px;
+  right: 52px;
+  cursor: pointer;
+}
+
+.department-nav {
+  width: 188px;
+  border: 1px solid #dcdddd;
+  margin-right: 22px;
+  float: left;
+  padding: 10px;
+}
+
+.department-nav .item {
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  color: #555455;
+  position: relative;
+  padding-left: 35px;
+}
+
+.department-nav .item:before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(http://climg.mukewang.com/58c61b610001c58300440638.jpg) 0 0  no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  margin-top: -11px;
+}
+
+.department-nav .item:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #c1c0c1;
+  border-right: 1px solid #c1c0c1;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.department-nav .item:hover {
+  cursor: pointer;
+  color: #fefefe;
+  background-color: #1fa4f0;
+}
+
+.department-nav .item:hover::before {
+  background-position-x: -22px;
+}
+
+.department-nav .item:hover::after {
+  border-color: #fefefe;
+}
+
+.department-nav .item:nth-child(2):before {
+  background-position-y: -22px;
+}
+
+.department-nav .item:nth-child(3):before {
+  background-position-y: -44px;
+}
+
+.department-nav .item:nth-child(4):before {
+  background-position-y: -66px;
+}
+
+.department-nav .item:nth-child(5):before {
+  background-position-y: -88px;
+}
+
+.department-nav .item:nth-child(6):before {
+background-position-y: -110px;
+}
+
+.department-nav .item:nth-child(7):before {
+  background-position-y: -132px;
+}
+
+.department-nav .item:nth-child(8):before {
+  background-position-y: -154px;
+}
+
+.department-nav .item:nth-child(9):before {
+  background-position-y: -176px;
+}
+
+.department-nav .item:nth-child(10):before {
+  background-position-y: -198px;
+}
+
+.department-nav .item:nth-child(11):before {
+  background-position-y: -220px;
+}
+
+.department-details {
+  width: 734px;
+  border: 1px solid #dcdddd;
+  float: left;
+  margin-bottom: 50px;
+  padding: 16px;
+}
+
+.department-details-item .caption {
+  font-size: 14px;
+  color: #10aeeb;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 22px;
+  border-bottom: 1px dashed #dcdddd;
+}
+
+.department-details-item .list {
+  padding: 10px 0 10px 30px;
+}
+
+.department-details-item .list-item {
+  display: block;
+  float: left;
+  width: 132px;
+  height: 27px;
+  line-height: 27px;
+  font-size: 12px;
+  color: #555455;
+}
+
+/* ******************************* ui 交互 *********************************** */
+/* 搜索 */
+.ui-search {
+  background: url(http://climg.mukewang.com/58c61b7e00012b9303260038.jpg) center no-repeat;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+}
+
+.ui-search-selected {
+  width: 70px;
+  height: 38px;
+  line-height: 38px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-indent: 14px;
+  cursor: pointer;
+}
+
+.ui-search-select-list {
+  display: none;
+  position: absolute;
+  left: 2px;
+  top: 36px;
+  width: 67px;
+  line-height: 24px;
+  background-color: #fff;
+  box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+  z-index: 2;
+}
+
+.ui-search-select-list a {
+  display: block;
+  color: #a5a2a2;
+  text-align: center;
+}
+
+.ui-search-select-list a:hover {
+  background-color: #ebeef5;
+}
+
+.ui-search-input {
+  position: absolute;
+  top: 5px;
+  left: 73px;
+  width: 208px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 13px;
+  color: #a5a2a2;
+  border: none;
+}
+
+.ui-search-submit {
+  display: block;
+  width: 40px;
+  height: 36px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+}
+
+/* 返回顶部 */
+.ui-back-top {
+  display: none;
+  position: fixed;
+  right: 2px;
+  bottom: 2px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: rgb(102, 102, 102) url(http://climg.mukewang.com/58c61bb900013e2c00230023.png) center no-repeat;
+  z-index: 9;
+}
+
+.ui-back-top:hover:after {
+  background: rgb(102, 102, 102);
+  content: '回到顶部';
+  display: block;
+  line-height: 20px;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <!--此处填写HTML代码-->
+  <div class="top">
+    <div class="wrap">
+      <span class="call">010-114/116114电话预约</span>
+      <span class="welcome">欢迎来到城市医院预约挂号统一平台&nbsp;请&nbsp;
+        <a href="#" class="login">登录</a>
+        <a href="#" class="signup">注册</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="help-center">帮助中心</a>
+      </span>
+    </div>
+  </div>
+
+  <div id="header" class="header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="http://climg.mukewang.com/58c61b2f0001f5c008400172.png" alt="logo">
+      </a>
+      <div class="search ui-search">
+        <div class="ui-search-selected">医院</div>
+        <div class="ui-search-select-list">
+          <a href="#">科室</a>
+          <a href="#">疾病</a>
+          <a href="#">医院</a>
+        </div>
+        <input type="text" name="search-content" class="ui-search-input" placeholder="请输入搜索内容">
+        <a href="#" class="ui-search-submit">&nbsp;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav" class="nav">
+    <div class="wrap">
+      <a href="#" class="link">首页</a>
+      <a href="#" class="link">按医院挂号</a>
+      <a href="#" class="link link_focus">按科室挂号</a>
+      <a href="#" class="link">按疾病挂号</a>
+      <a href="#" class="link">最新公告</a>
+      <a href="#" class="link right">社会知名医院</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="wrap clearfix">
+      <div class="favorite-department">
+        <div class="caption">热门科室</div>
+        <div class="list clearfix">
+          <a href="#" class="item">神经外科</a>
+          <a href="#" class="item">妇科</a>
+          <a href="#" class="item">产科</a>
+          <a href="#" class="item">儿科</a>
+          <a href="#" class="item">骨科</a>
+          <a href="#" class="item">眼科</a>
+          <a href="#" class="item">耳鼻科</a>
+          <a href="#" class="item">肿瘤外科</a>
+          <a href="#" class="item">肿瘤综合科</a>
+          <a href="#" class="item">皮肤美容</a>
+          <a href="#" class="item">心理咨询科</a>
+          <a href="#" class="item">中医科</a>
+        </div>
+
+        <div class="list list_hidden clearfix">
+          <a href="#" class="item">急诊科</a>
+        </div>
+        <span class="list_hidden_toggle">展开全部</span>
+      </div>
+
+      <div class="department-nav">
+        <div class="item">内科</div>
+        <div class="item">外科</div>
+        <div class="item">妇产科</div>
+        <div class="item">生殖中心</div>
+        <div class="item">儿科</div>
+        <div class="item">骨外科</div>
+        <div class="item">眼科</div>
+        <div class="item">口腔科</div>
+        <div class="item">耳鼻咽喉头颈科</div>
+        <div class="item">肿瘤科</div>
+        <div class="item">皮肤性病科</div>
+        <div class="item">男性学科</div>
+        <div class="item">皮肤美容</div>
+        <div class="item">烧伤科</div>
+        <div class="item">精神心理科</div>
+        <div class="item">中医科</div>
+        <div class="item">中西医结合科</div>
+        <div class="item">传染病科</div>
+
+      </div>
+
+      <div class="department-details">
+        <div class="department-details-item clearfix">
+          <div class="caption">内科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">外科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">妇产科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">生殖中心</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">儿科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">骨外科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">眼科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">口腔科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">耳鼻咽喉头颈科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">肿瘤科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">骨外科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">眼科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">口腔科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">耳鼻咽喉头颈科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">肿瘤科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">骨外科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">眼科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">口腔科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">耳鼻咽喉头颈科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">肿瘤科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">骨外科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">眼科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">口腔科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">耳鼻咽喉头颈科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+
+        <div class="department-details-item clearfix">
+          <div class="caption">肿瘤科</div>
+          <div class="list">
+            <a href="#" class="list-item">心血管内科</a>
+            <a href="#" class="list-item">神经内科</a>
+            <a href="#" class="list-item">消化内科</a>
+            <a href="#" class="list-item">内分泌科</a>
+            <a href="#" class="list-item">免疫科</a>
+            <a href="#" class="list-item">呼吸科</a>
+            <a href="#" class="list-item">肾病内科</a>
+            <a href="#" class="list-item">血液科</a>
+            <a href="#" class="list-item">感染内科</a>
+            <a href="#" class="list-item">过敏反应科</a>
+            <a href="#" class="list-item">老年病科</a>
+            <a href="#" class="list-item">普通内科</a>
+            <a href="#" class="list-item">高压氧科</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="footer">
+    Copyright &copy; 2020慕课网版权所有
+  </div>
+
+  <script>
+    //此处填写jQuery代码
+    // ui-search 定义
+$.fn.UiSearch = function() {
+  var ui = $(this);
+
+  $('.ui-search-selected', ui).on('click', function() {
+    $('.ui-search-select-list').toggle();
+    return false;
+  });
+
+  $('.ui-search-select-list a', ui).on('click', function() {
+    $('.ui-search-selected').text($(this).text());
+  });
+
+  $('body').on('click', function() {
+    $('.ui-search-select-list').hide();
+  });
+}
+
+// ui-back-top
+$.fn.UiBackTop = function() {
+  var ui = $(this),
+      el = $('<a href="#" class="ui-back-top"></a>'),
+      windowHeight = $(window).height();
+
+  ui.append(el);
+  $(window).on('scroll', function() {
+    var top = $('body, html').scrollTop();
+    if (top > windowHeight) {
+      el.show();
+    } else {
+      el.hide();
+    }
+  });
+  el.on('click', function() {
+    $(window).scrollTop(0);
+  });
+}
+
+// 页面的脚本逻辑
+$(function() {
+  $('.ui-search').UiSearch();
+  $('body').UiBackTop();
+
+  var isListHidden = true;
+  $('.list_hidden_toggle').on('click', function() {
+    if (isListHidden) {
+      $('.list_hidden').show();
+      $(this).text('收缩全部');
+      isListHidden = false;
+    } else {
+      $('.list_hidden').hide();
+      $(this).text('展开全部');
+      isListHidden = true;
+    }
+  })
+
+  // 初始化导航处的背景图片
+  $('.department-nav .item').each(function(idx, elem) {
+    var selector = '.department-nav .item:nth-child(' + idx +'):before';
+    $(this).before().css('background-position-y', -22 * idx + 'px');
+    console.log($(selector));
+    console.log($(selector).css('background-position-y'));
+    console.log($(selector).css('background'));
+  })
+});
+
+  </script>
+</body>
+</html>
