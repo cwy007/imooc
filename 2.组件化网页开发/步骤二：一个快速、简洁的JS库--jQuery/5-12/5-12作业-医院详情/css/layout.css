@@ -26,6 +26,39 @@
   background-color: #60bff2;
 }
 
+/* content */
+.content {
+  padding-bottom: 40px;
+}
+
+.content .hospital {
+  width: 1000px;
+  height: 260px;
+  margin: 30px 0 40px 0;
+  background-color: #f7f7f7;
+}
+
+.content-tab-captions {
+  width: 1000px;
+  height: 32px;
+  background-color: #60bff2;
+  margin-bottom: 20px;
+}
+
+.content-tab-details-item .departments {
+  width: 708px;
+  height: 411px;
+  background-color: #f2fbff;
+  float: left;
+}
+
+.content-tab-details-item .rules {
+  width: 274px;
+  height: 284px;
+  background-color: #f4f6fa;
+  float: right;
+}
+
 /* sticky footer */
 html {
   min-height: 100%;

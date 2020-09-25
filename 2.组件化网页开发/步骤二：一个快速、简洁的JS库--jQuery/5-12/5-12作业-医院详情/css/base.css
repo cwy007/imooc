@@ -64,6 +64,10 @@ input {
   text-align: center;
 }
 
+.nav .link.right {
+  float: right;
+}
+
 .nav a:hover {
   color: #1fa4f0;
 }
@@ -73,6 +77,91 @@ input {
   color: #fff;
 }
 
+/* #content 模块内的样式 */
+.content .hospital .caption {
+  height: 52px;
+  margin: 0 24px;
+  line-height: 52px;
+  border-bottom: 1px solid #dcdddd;
+}
+
+.content .hospital-name {
+  float: left;
+  font-size: 16px;
+  color: #000;
+}
+
+.content .hospital-name .following {
+  font-size: 12px;
+  color: #f29600;
+  padding-left: 12px;
+}
+.content .hospital-level {
+  float: right;
+  font-size: 12px;
+}
+
+.content .hospital-level .blue {
+  color: #00f;
+  padding-left: 14px;
+}
+
+.hospital-info {
+  margin: 0 24px;
+  position: relative;
+}
+
+.hospital-info-details {
+  padding: 17px 272px 0 228px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #888888;
+}
+
+.hospital-info-details-item {
+  padding-left: 33px;
+  position: relative;
+}
+
+.hospital-info-details-item:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon-web.png) 0 0 no-repeat;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.hospital-info-details-item:nth-child(2):before {
+  background-position-y: -20px;
+}
+.hospital-info-details-item:nth-child(3):before {
+  background-position-y: -40px;
+}
+.hospital-info-details-item:nth-child(4):before {
+  background-position-y: -60px;
+}
+
+.hospital-info-details-item {
+  padding: 5px 0 5px 24px;
+}
+
+.hospital-info .hospital-img {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 200px;
+  height: 150px;
+}
+
+.hospital-info .map-img {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 250px;
+  height: 165px;
+}
 /* footer */
 .footer {
   line-height: 70px;
