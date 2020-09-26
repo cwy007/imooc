@@ -82,3 +82,96 @@
   line-height: 20px;
   text-align: center;
 }
+
+/* 科室排班表 */
+.ui-table-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.ui-table-right,
+.ui-table-left {
+  width: 35px;
+  height: 325px;
+  background-color: #f2f8ff;
+  position: absolute;
+  top: 0;
+  border: 1px solid #dcdddd;
+  z-index: 2;
+}
+
+.ui-table-left {
+  left: 0;
+}
+
+.ui-table-right .next,
+.ui-table-left .prev {
+  display: block;
+  width: 35px;
+  height: 44px;
+  background: url(../img/icon-scheduling-left.jpg) center center no-repeat;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.ui-table-right {
+  right: 0;
+}
+
+.ui-table-right .next {
+  background: url(../img/icon-scheduling-right.jpg) center center no-repeat;
+}
+
+.ui-table-left .morning,
+.ui-table-left .afternoon,
+.ui-table-left .evening {
+  display: inline-block;
+  width: 35px;
+  height: 93px;
+  line-height: 92px;
+  text-align: center;
+  color: #000;
+}
+
+.ui-table-columns {
+  padding: 0 37px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4592px;
+  transition: all 1s;
+}
+
+.ui-table-columns-item {
+  color: #868686;
+  text-align: center;
+  width: 92.7px;
+  border-right: 1px solid #dcdddd;
+  height: 327px;
+  float: left;
+}
+
+.ui-table-columns-item .date {
+  background-color: #f8fafc;
+  width: 92.7px;
+  height: 44px;
+  display: block;
+  border-top: 1px solid #dcdddd;
+  border-bottom: 1px solid #dcdddd;
+}
+
+.ui-table-columns-item .evening,
+.ui-table-columns-item .afternoon,
+.ui-table-columns-item .morning {
+  border-bottom: 1px solid #dcdddd;
+  height: 92.6px;
+  background-color: #fff;
+  display: block;
+}
+
+.ui-table-columns-item .afternoon {
+  background-color: #e0eefd;
+}

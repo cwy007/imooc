@@ -68,10 +68,10 @@
 }
 
 .scheduling .scheduling-table {
-  width: 728px;
-  height: 325px;
-  border: 1px solid #dcdddd;
+  width: 730px;
+  height: 327px;
   float: left;
+  background-color: #dcdddd;
 }
 
 .scheduling .rules {
