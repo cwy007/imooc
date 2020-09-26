@@ -162,6 +162,119 @@ input {
   width: 250px;
   height: 165px;
 }
+
+/* content-tab */
+.content-tab-captions {
+  background: none;
+  border-bottom: 2px solid #60bff2;
+}
+
+.content-tab-captions-item {
+  display: inline-block;
+  width: 110px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #60bff2;
+  text-align: center;
+  cursor: pointer;
+}
+.content-tab-captions-item.active {
+  background-color: #60bff2;
+  color: #fff;
+}
+
+/* 预约挂号 */
+.content-tab-details-item .departments {
+  background: none;
+}
+
+.content-tab-details-item .departments .title {
+  height: 44px;
+  width: 708px;
+  line-height: 44px;
+  font-size: 15px;
+  color: #000;
+  text-indent: 30px;
+  background-color: #f4f6fa;
+}
+
+.content-tab-details-item .departments .line {
+  width: 706px;
+  line-height: 30px;
+  font-size: 14px;
+  border: 1px solid #f4f6fa;
+  background-color: #f2fbff;
+}
+
+.content-tab-details-item .departments .department-name {
+  text-align: center;
+  color: #888;
+  float: left;
+  width: 144px;
+  height: 90px;
+}
+
+.content-tab-details-item .departments .department-links {
+  float: right;
+  width: 521px;
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+.content-tab-details-item .departments .department-links .link {
+  color: #4c4948;
+  float: left;
+  display: block;
+  width: 122px;
+}
+
+/* 预约规则 */
+.rules-caption {
+  height: 41px;
+  font-size: 14px;
+  color: #606060;
+  line-height: 41px;
+  padding-left: 10px;
+}
+
+.rules-caption .update-time {
+  font-size: 12px;
+  color: #00b3ea;
+}
+
+.rules-detail {
+  background-color: #fff;
+  border: 1px solid #f4f6fa;
+  padding: 10px 20px 10px 10px;
+  line-height: 22px;
+  font-size: 12px;
+  height: 242px;
+  overflow: scroll;
+}
+
+.rules-detail-item-name {
+  display: block;
+  float: left;
+  width: 65px;
+}
+
+.rules-detail-item-content {
+  display: block;
+  float: right;
+  width: 177px;
+  color: #888888;
+}
+
+/* content-tab 医院介绍 */
+.content-tab-details-item {
+  display: none;
+}
+
+.content-tab-details-item.active {
+  display: block;
+}
+
 /* footer */
 .footer {
   line-height: 70px;
