@@ -59,6 +59,37 @@
   float: right;
 }
 
+/* scheduling.html 科室排班表 */
+.scheduling .scheduling-caption {
+  margin-top: 30px;
+  width: 1000px;
+  height: 50px;
+  background-color: #dcdddd;
+}
+
+.scheduling .scheduling-table {
+  width: 728px;
+  height: 325px;
+  border: 1px solid #dcdddd;
+  float: left;
+}
+
+.scheduling .rules {
+  width: 269px;
+  height: 325px;
+  float: right;
+  border: 1px solid #dcdddd;
+  border-left: none;
+}
+
+.scheduling .results {
+  width: 998px;
+  height: 65px;
+  border: 1px solid #dcdddd;
+  border-top: none;
+  float: left;
+}
+
 /* sticky footer */
 html {
   min-height: 100%;

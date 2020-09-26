@@ -230,7 +230,7 @@ input {
 }
 
 /* 预约规则 */
-.rules-caption {
+.content-tab-details .rules-caption {
   height: 41px;
   font-size: 14px;
   color: #606060;
@@ -238,12 +238,12 @@ input {
   padding-left: 10px;
 }
 
-.rules-caption .update-time {
+.content-tab-details .rules-caption .update-time {
   font-size: 12px;
   color: #00b3ea;
 }
 
-.rules-detail {
+.content-tab-details .rules-detail {
   background-color: #fff;
   border: 1px solid #f4f6fa;
   padding: 10px 20px 10px 10px;
@@ -253,13 +253,14 @@ input {
   overflow: scroll;
 }
 
-.rules-detail-item-name {
+.content-tab-details .rules-detail-item-name {
   display: block;
   float: left;
   width: 65px;
+  color: #555555;
 }
 
-.rules-detail-item-content {
+.content-tab-details .rules-detail-item-content {
   display: block;
   float: right;
   width: 177px;
@@ -360,6 +361,58 @@ input {
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+/* scheduling.html 科室排班表 */
+.scheduling .scheduling-caption {
+  background: none;
+  padding: 0 9px;
+  height: 50px;
+  line-height: 50px;
+  color: #000;
+  font-size: 15px;
+}
+
+.scheduling .scheduling-caption .back-to-department-detail {
+  color: #00b3ec;
+  font-size: 14px;
+}
+
+.scheduling .results {
+  font-size: 16px;
+  color: #9f9f9f;
+  text-align: center;
+  line-height: 65px;
+}
+
+.scheduling .rules {
+  width: 170px;
+  height: 301px;
+  padding: 12px 90px 12px 9px;
+  overflow: scroll;
+  font-size: 12px;
+}
+
+.scheduling .rules-caption {
+  font-size: 16px;
+  line-height: 38px;
+  color: #000;
+}
+
+.scheduling .rules-detail-item-name {
+  display: block;
+  color: #555555;
+  line-height: 19px;
+}
+
+.scheduling .rules-detail-item-content {
+  line-height: 18px;
+  color: #888888;
+}
+
+.scheduling .results .text {
+  padding-left: 28px;
+  background: url(../img/icon-info.jpg) bottom left no-repeat;
 }
 
 /* footer */
