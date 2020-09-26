@@ -56,9 +56,63 @@ $.fn.UiTab = function (header, content) {
   });
 }
 
+function formatDatetime() {
+  weeks = ["日", "一", "二", "三", "四", "五", "六"]
+  var date = new Date();
+  var year = date.getFullYear(),
+    month = date.getMonth() + 1,
+    day = date.getDate(),
+    week = weeks[date.getDay()],
+    hour = date.getHours(),
+    min = date.getMinutes(),
+    sec = date.getSeconds();
+  return "今天是" + year + "年" + month + "月" + day + "日" + "星期" + week + "<br />" + hour + ":" + min + ":" + sec;
+}
+// uiSchedulingTable 科室排班表
+$.fn.UiSchedulingTable = function() {
+  var ui = $(this),
+      prevBtn = $('.ui-scheduling-table-left', ui),
+      nextBtn = $('.ui-scheduling-table-right', ui),
+      zhCnWeeks = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+      today = new Date(),
+      columns = $('.ui-scheduling-table-columns', ui),
+      blankDiv = $('<div></div>');
+
+      // 7周
+      for (var i = 0; i < 49; i++) {
+        var week = zhCnWeeks[today.getDay()],
+            year = today.getFullYear(),
+            month = (today.getMonth() + 1),
+            day = today.getDate(),
+            column = $('<div class="ui-scheduling-table-columns-item">'),
+            date = $('<span class="date">');
+            morning = $('<span class="morning">'),
+            afternoon = $('<span class="afternoon">约满</span>'),
+            evening = $('<span class="evening">');
+        date.html(week + '<br/>' + year + '-' + month + '-' + day);
+        column.append(date, morning, afternoon, evening);
+        blankDiv.append(column);
+        today.setDate(today.getDate() + 1);
+      }
+      columns.append(blankDiv);
+
+      var idx = 0;
+      prevBtn.on('click', function() {
+        idx -= 1;
+        if (idx <= 0) idx = 6;
+        columns.css('left', -656 * idx);
+      })
+      nextBtn.on('click', function() {
+        idx += 1;
+        if (idx > 6) idx = 0;
+        columns.css('left', -656 * idx);
+      })
+}
+
 // 页面的脚本逻辑
 $(function () {
   $('.ui-search').UiSearch();
   $('body').UiBackTop();
   $('.content-tab').UiTab('.content-tab-captions-item', '.content-tab-details-item');
+  $('.ui-scheduling-table').UiSchedulingTable();
 });
