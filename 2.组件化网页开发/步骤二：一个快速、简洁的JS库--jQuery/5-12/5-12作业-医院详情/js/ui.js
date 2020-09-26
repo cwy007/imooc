@@ -70,43 +70,53 @@ function formatDatetime() {
 }
 // uiSchedulingTable 科室排班表
 $.fn.UiSchedulingTable = function() {
-  var ui = $(this),
-      prevBtn = $('.ui-scheduling-table-left', ui),
-      nextBtn = $('.ui-scheduling-table-right', ui),
-      zhCnWeeks = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
-      today = new Date(),
-      columns = $('.ui-scheduling-table-columns', ui),
-      blankDiv = $('<div></div>');
+  var ui = $(this);
+  var tableWrap = $('<div class="ui-scheduling-table-wrap">');
+  var left = $('<div class="ui-scheduling-table-left">');
+  var prevBtn = $('<span class="prev"></span>');
+  left.append(prevBtn);
+  left.append($('<span class="morning">上午</span>'));
+  left.append($('<span class="afternoon">下午</span>'));
+  left.append($('<span class="evening">晚上</span>'));
+  tableWrap.append(left);
+  var columns = $('<div class="ui-scheduling-table-columns clearfix">');
+  var zhCnWeeks = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+  var today = new Date();
 
-      // 7周
-      for (var i = 0; i < 49; i++) {
-        var week = zhCnWeeks[today.getDay()],
-            year = today.getFullYear(),
-            month = (today.getMonth() + 1),
-            day = today.getDate(),
-            column = $('<div class="ui-scheduling-table-columns-item">'),
-            date = $('<span class="date">');
-            morning = $('<span class="morning">'),
-            afternoon = $('<span class="afternoon">约满</span>'),
-            evening = $('<span class="evening">');
-        date.html(week + '<br/>' + year + '-' + month + '-' + day);
-        column.append(date, morning, afternoon, evening);
-        blankDiv.append(column);
-        today.setDate(today.getDate() + 1);
-      }
-      columns.append(blankDiv);
+  // 7周
+  for (var i = 0; i < 49; i++) {
+    var week = zhCnWeeks[today.getDay()],
+        year = today.getFullYear(),
+        month = (today.getMonth() + 1),
+        day = today.getDate(),
+        column = $('<div class="ui-scheduling-table-columns-item">'),
+        date = $('<span class="date">');
+        morning = $('<span class="morning">'),
+        afternoon = $('<span class="afternoon">约满</span>'),
+        evening = $('<span class="evening">');
+    date.html(week + '<br/>' + year + '-' + month + '-' + day);
+    column.append(date, morning, afternoon, evening);
+    columns.append(column);
+    today.setDate(today.getDate() + 1);
+  }
+  tableWrap.append(columns);
+  var right = $('<div class="ui-scheduling-table-right">');
+  var nextBtn = $('<span class="next"></span>');
+  right.append(nextBtn);
+  tableWrap.append(right);
+  ui.append(tableWrap);
 
-      var idx = 0;
-      prevBtn.on('click', function() {
-        idx -= 1;
-        if (idx <= 0) idx = 6;
-        columns.css('left', -656 * idx);
-      })
-      nextBtn.on('click', function() {
-        idx += 1;
-        if (idx > 6) idx = 0;
-        columns.css('left', -656 * idx);
-      })
+  var idx = 0;
+  prevBtn.on('click', function() {
+    idx -= 1;
+    if (idx <= 0) idx = 6;
+    columns.css('left', -656 * idx);
+  })
+  nextBtn.on('click', function() {
+    idx += 1;
+    if (idx > 6) idx = 0;
+    columns.css('left', -656 * idx);
+  })
 }
 
 // 页面的脚本逻辑
