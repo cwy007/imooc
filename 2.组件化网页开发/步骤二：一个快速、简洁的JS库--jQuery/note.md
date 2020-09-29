@@ -35,3 +35,23 @@ $(function(){
 参数、类型、名称、注释
 
 ui组件，通用型
+
+## jQuery 中的ready 写法
+
+$(document).ready(function() {
+});
+
+$().ready(function() {
+});
+
+$(function() {});
+
+mouseup事件鼠标左键点击和鼠标右键点击都可以实现
+dblclick事件鼠标左键双击和鼠标右键双击都可以实现
+
+jQuery中mouseover和mouseout事件执行的过程，鼠标移入移出的过程为：移入one---移入two---移出two---移出one，需要考虑到这两个事件发生的时候会冒泡到父元素上，所以移入子元素的时候会冒泡到父元素上，父元素会执行移出和移入事件，所以按照顺序输出的结果为：
+one over---one out---two over---one over---two out---one out---one over---one out
+
+jQuery的选择器类型，常见的有基本选择器、多项选择器、层级选择器、属性选择器、过滤器等
+
+:checked 选择器选取所有选中的复选框或单选按钮以及select中的option元素
