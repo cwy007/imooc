@@ -1,0 +1,84 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	var request = indexedDB.open('testDBLeo',21);
+	//如果你有这个数据 那好咱们就打开， 没有 就创建
+	//版本号只能往上走 不可以降 
+	console.log(request);
+	request.onsuccess = function(){
+		console.log('创建数据库成功');
+	};
+
+	request.onerror = function(){
+		console.log('数据库读取失败');
+	};
+
+	request.onupgradeneeded = function(){
+		var db = request.result;
+		//console.log(db);
+		var store = db.createObjectStore('test3',{keyPath: 'id'});
+		store.createIndex('test3','name',{unique:true});
+		//unique true 唯一性 如果有多个同样的的情况下 就不写入了
+		
+	};
+
+	var json = [{
+		"id":200,
+		"name":"Modoy",
+		"age":"15"
+	},{
+		"id":201,
+		"name":"Busy",
+		"age":"21"
+	},{
+		"id":202,
+		"name":"Blue",
+		"age":"23"
+	}]
+
+
+	setTimeout(function(){
+		var db = request.result;
+		var transaction = db.transaction('test3','readwrite');
+		var store = transaction.objectStore('test3');
+
+		var requestNode = store.openCursor(IDBKeyRange.bound(200,202),'prev');
+
+		requestNode.onsuccess = function(){
+			//console.log(requestNode.result.value)
+			var cursor = requestNode.result;
+			if(cursor){
+				console.log(cursor.value);
+				cursor.continue();
+			};
+			
+		};
+		/*
+		for(var i = 0;i < json.length;i++){
+			store.add(json[i]);
+		};
+		*/
+/*
+		requestNode.onsuccess = function(){
+			//console.log('数据添加成功了');
+			console.log(requestNode.result);
+		};
+
+		requestNode.onerror = function(){
+			console.log('数据指令错误');
+		};
+*/	
+	
+
+	},300);
+
+
+</script>
+
+</body>
+</html>

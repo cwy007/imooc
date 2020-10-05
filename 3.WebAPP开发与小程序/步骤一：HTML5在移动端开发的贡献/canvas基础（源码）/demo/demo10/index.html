@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas"  width="600px" height="400px">
+  您的浏览器不支持canvas
+</canvas>
+<script  type="text/javascript">
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    //保存当前环境
+    ctx.save();
+
+    ctx.arc(300, 100, 200, 0, Math.PI*2, true);
+    //进行区域剪辑
+    ctx.clip();
+    ctx.fillStyle = "#F00";
+    ctx.fillRect(100, 100, 200, 200);
+
+    //恢复环境，释放了剪辑区域的作用
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(400, 300, 100, 0, Math.PI*2, true);
+    ctx.fillStyle = "#00F";
+    ctx.fill();
+</script>
+</body>
+</html>

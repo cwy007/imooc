@@ -1,0 +1,115 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e&plugin=AMap.OverView,AMap.Scale,AMap.ToolBar"></script> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;list-style: none;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        
+        #panel{
+            position: fixed;
+            background: white;
+            top: 10px;
+            right: 10px;
+            width: 280px;
+            height: 200px;
+        }
+        #search{width: 200px;height: 100px;position: absolute;left: 10px;top: 10px;background: white;}
+
+    </style>
+</head>
+<body>
+	<div id="container"></div>  
+    <div id='panel'>
+        <button id='yy'>鹰眼</button>
+        <button id='gjt'>工具条</button>
+        <button id='blc'>比例尺</button>
+    </div>   
+	<script type="text/javascript">
+        var map = new AMap.Map('container',{
+            zoom:16,
+            center:[116.379391,39.861536],
+        });
+
+        var oV = new AMap.OverView({
+            visible:true //默认显示和隐藏
+        });
+
+        var oS = new AMap.Scale();
+        var oT = new AMap.ToolBar()
+        map.addControl(oV);
+        map.addControl(oS);
+
+        map.addControl(oT);
+
+
+        let yyNode = gjtNode = blcNode = true;
+        yy.onclick = function(){
+            if(yyNode == true){
+                oV.hide();
+            }
+            else{
+                oV.show();
+            };
+
+            yyNode = !yyNode
+        };
+
+        gjt.onclick = function(){
+            if(gjtNode == true){
+                oT.hide();
+            }
+            else{
+                oT.show();
+            };
+
+            gjtNode = !gjtNode
+        };
+
+        blc.onclick = function(){
+            if(blcNode == true){
+                oS.hide();
+            }
+            else{
+                oS.show();
+            };
+
+            blcNode = !blcNode
+        }
+        
+        /*
+        setTimeout(function(){
+            oV.hide();
+            oS.hide();
+            oT.hide();
+        },5000);
+
+        setTimeout(function(){
+            oV.show();
+            oS.show();
+            oT.show();
+        },7000);
+
+        */
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

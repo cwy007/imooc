@@ -1,0 +1,231 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e"></script> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        #setZoomNode,#setCenterNode{width: 400px;height: 100px;position: absolute;z-index: 99;right: 20px;top: 20px;border: 1px solid black;box-shadow: 0 0 5px black;background: white;}
+        #setCenterNode{top: 20px;}
+
+    </style>
+</head>
+<body>
+	<div id="container"></div> 
+    <div id='setCenterNode'>
+        <!--
+        <input type="" name="" id='xNode'>
+        <input type="" name="" id='yNode'>
+         -->
+        <!--
+        <input type="text" name="" id='cityNode'>
+        <button id='btn'>确定</button>
+        -->
+        <div>地图的右上角坐标:<span id='ne'></span></div>
+        <div>地图的左下角坐标:<span id='sw'></span></div>
+        <div>目前鼠标的经纬度是:<span id='xyNode'></span></div>
+        <!--
+        <input type="" name="" id='xNode'>
+        <input type="" name="" id='yNode'>
+
+        <button id='btn'>确定</button>
+    -->
+        
+
+    </div>
+
+    
+	<script type="text/javascript">
+		var map = new AMap.Map('container',{
+            zoom:11, //初始的地图级别
+            center:[100.379391,30.861536] //初始化地图的中心点
+        });
+
+
+        //longitude 经度
+        //latitude  纬度
+        map.on('click',function(e){
+            //console.log(e.lnglat);
+            //xyNode.innerHTML = e.lnglat.lng + ',' + e.lnglat.lat;
+            map.setCenter([e.lnglat.lng,e.lnglat.lat])
+        });
+
+        /*
+        setTimeout(function(){
+            map.panBy(50,300);
+        },5000);
+        */
+        /*
+        setInterval(function(){
+             map.panBy(600*Math.random()-300,600*Math.random()-300);
+        },3000);
+        */
+        /*
+        setTimeout(function(){
+            map.panTo([116.379391,39.861536])
+        },5000)
+        */
+        /*
+        btn.onclick =function(){
+            map.panTo([xNode.value,yNode.value])
+        };
+        */
+        //设定显示限制
+
+        /*
+        var bounds = map.getBounds();
+        bounds.northeast.R = 118;
+        console.log(bounds)
+
+        map.setLimitBounds(bounds);
+
+        //通过事件来设定显示限制
+        btn.onclick = function(){
+            var bounds = map.getBounds();
+
+            //console.log(xNode.value)
+            bounds.northeast.R = Number(xNode.value);
+            bounds.southwest.R = Number(yNode.value);
+            map.setLimitBounds(bounds);
+        };
+        */
+
+        //通过事件解除显示限制
+        /*
+        clear.onclick = function(){
+            map.clearLimitBounds();
+        };
+        */
+
+
+        //map.clearLimitBounds();
+
+        //设置地图的显示范围
+        /*
+        var myBounds = new AMap.Bounds([88.379391,20.861536],[117.379391,41.861536])
+        map.setBounds(myBounds);
+        */
+        /*
+        地图的右上角坐标:120.834469,42.489523
+        地图的左下角坐标:112.924313,39.208002
+
+        */
+
+
+
+        //获取当前地图的范围坐标
+        /*
+        console.log(map.getBounds())
+        console.log(map.getBounds().northeast.toString())
+        //地图的右上角的坐标
+        ne.innerHTML = map.getBounds().northeast.toString();
+        sw.innerHTML = map.getBounds().southwest.toString();
+        */
+        
+        //设置当前的行政区
+
+        //map.setCity('天津市');
+
+
+        //通过事件来给予地图当前中心点的位置（行政区）
+        /*
+        btn.onclick = function(){
+            map.setCity(cityNode.value);
+        };
+        */
+        //获取当前位置的行政区
+        /*
+        map.getCity(function(info){
+            //console.log(info);
+            setCenterNode.innerHTML = info.province+','+info.district
+        });
+        */
+
+        //中心点和层级一起去设定
+        /*
+        setTimeout(function(){
+            map.setZoomAndCenter(12,[121.22,30])
+        },5000)
+        */
+
+        //通过事件来一起给予 级别，中心点
+        /*
+        btn.onclick = function(){
+            map.setZoomAndCenter(zoomVal.value,[xNode.value,yNode.value]);
+        };
+        */
+
+
+        // console.log(map.getZoom());
+        //console.log(map.getCenter().toString());
+
+        //通过事件来给予中心点
+        /*
+        btn.onclick = function(){
+            map.setCenter([xNode.value,yNode.value]);
+        };
+        */
+
+        //设置地图的中心点
+        /*
+        setTimeout(function(){
+            map.setCenter([121.222,30]);
+        },5000);
+        */
+
+
+        //设置地图的级别
+        /*
+        setTimeout(function(){
+          map.setZoom(15);
+        },5000);
+        */
+
+        //通过事件来给它设定级别
+        /*
+        btn.onclick = function(){
+            map.setZoom(zoomVal.value);
+        };
+        */
+
+        map.on('moveend',function(){
+            ne.innerHTML = map.getBounds().northeast.toString();
+            sw.innerHTML = map.getBounds().southwest.toString();
+            /*
+            map.getCity(function(info){
+             setCenterNode.innerHTML = info.province+','+info.district
+            });
+            */
+            
+            //console.log(map.getZoom());
+            //console.log(map.getCenter().toString());
+        })
+
+        map.on('zoomend',function(){
+            ne.innerHTML = map.getBounds().northeast.toString();
+            sw.innerHTML = map.getBounds().southwest.toString();
+            //console.log(map.getZoom());
+            //console.log(map.getCenter().toString());
+        });
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

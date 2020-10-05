@@ -1,0 +1,67 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;list-style: none;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        #setZoomNode,#setCenterNode{width: 280px;position: absolute;z-index: 99;right: 20px;top: 50px;border: 1px solid black;box-shadow: 0 0 5px black;background: white;}
+        #setCenterNode{top: 50px;}
+        #node li{cursor: pointer;}
+        #searchNode{width: 280px;height: 30px;background: white;position: absolute;right: 20px;top: 20px;}
+
+    </style>
+</head>
+<body>
+	<div id="container"></div> 
+     <div id='searchNode'>
+         <input type="" name="" id='searchIpt'>
+         
+     </div>
+   
+
+    
+	<script type="text/javascript">
+		var map = new AMap.Map('container',{
+            zoom:11, //初始的地图级别
+            center:[100.379391,30.861536] //初始化地图的中心点
+        });
+
+   
+        var searchNode = new AMap.Autocomplete({
+            input:'searchIpt'
+        });
+
+        var placeSearch = new AMap.PlaceSearch({
+            map:map
+        });
+
+
+        AMap.event.addListener(searchNode,'select',function(e){
+          //  console.log(e);
+            placeSearch.search(e.poi.name)
+        });  
+
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

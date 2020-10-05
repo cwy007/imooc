@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <canvas id="myCanvas"  width="600px" height="400px">
+      您的浏览器不支持canvas
+    </canvas>
+    <script  type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        //阴影的X偏移
+        ctx.shadowOffsetX = 10;
+        //阴影的Y偏移
+        ctx.shadowOffsetY = 10;
+        //阴影的颜色
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        //阴影的模糊度
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+        ctx.fillRect(100, 100, 100, 100);
+
+        ctx.font = "50px sans-serif";
+        ctx.fillText("慕课网",200,100);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e&plugin=AMap.Autocomplete"></script>
+    <style type="text/css">
+    	*{margin: 0;padding: 0;list-style: none;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        #setZoomNode,#setCenterNode{width: 280px;position: absolute;z-index: 99;right: 20px;top: 50px;border: 1px solid black;box-shadow: 0 0 5px black;background: white;}
+        #setCenterNode{top: 50px;}
+        #node li{cursor: pointer;}
+        #searchNode{width: 280px;height: 30px;background: white;position: absolute;right: 20px;top: 20px;}
+        .amap-icon img{
+            width: 25px;height: 34px;
+        }
+
+    </style>
+</head>
+<body>
+	<div id="container"></div>
+
+
+	<script type="text/javascript">
+		var map = new AMap.Map('container',{
+            zoom:11, //初始的地图级别
+            center:[116.379391,39.861536] //初始化地图的中心点
+        });
+
+        var marker = new AMap.Marker({
+            icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png', //标记的图标
+            position:[116.379391,39.861536], //标记的坐标
+           // offset:new AMap.Pixel(-50,-500) // 像素的偏差值
+        });
+        var marker2 = new AMap.Marker({
+            icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png', //标记的图标
+            position:[116.378391,39.825536], //标记的坐标
+           // offset:new AMap.Pixel(-50,-500) // 像素的偏差值
+        });
+
+        //marker.setMap(map);
+        map.add([marker,marker2])
+
+        setTimeout(function(){
+            map.remove([marker,marker2])
+        },5000);
+/*
+        setTimeout(function(){
+            marker.setMap(null);
+        },5000);
+*/
+
+/*
+        map.on('click',function(e){
+          //  console.log(e.lnglat)
+             var marker = new AMap.Marker({
+                icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png', //标记的图标
+                position:[e.lnglat.lng,e.lnglat.lat], //标记的坐标
+                offset:new AMap.Pixel(-25,-25) // 像素的偏差值
+            });
+
+            marker.setMap(map);
+        })
+*/
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

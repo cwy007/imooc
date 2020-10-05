@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e"></script>
+    <style type="text/css">
+        *{margin: 0;padding: 0;list-style: none;}
+        #container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        #setZoomNode,#setCenterNode{width: 400px;height: 300px;position: absolute;z-index: 99;left: 20px;top: 20px;border: 1px solid black;box-shadow: 0 0 5px black;background: white;}
+        #setCenterNode{top: 20px;}
+        #setCenterNode h2 {
+            text-align: center;
+        }
+        #setCenterNode label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        #setCenterNode input {
+            padding: 5px;
+            margin-top: 5px;
+            outline: none;
+        }
+        #setCenterNode input[type="button"] {
+            color: white;
+            background-color: #267DF7;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #clear {
+            margin-left: 105px;
+            border: none;
+            padding: 5px;
+            background-color: #D1D1D2;
+            margin-top: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+        .provinceInfo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id='setCenterNode'>
+        <h2>工具栏</h2>
+        <div class="form-group">
+            <label for="city">搜索城市</label>
+            <input type="text" id="city">
+            <input type="button" value="确定" id="cityBtn">
+        </div>
+        <div class="form-group">
+            <label for="zoomNode">设置显示级别</label>
+            <input type="text" id="zoomNode">
+            <input type="button" value="确定" id="zoomBtn">
+        </div>
+        <button id="clear">解除限制范围</button>
+        <div class="provinceInfo" id="provinceInfo">当前所在省/直辖市：<span id="provinceInfoValue"></span></div>
+    </div>
+
+
+    <script type="text/javascript">
+        var map = new AMap.Map('container',{
+            zoom:11, //初始的地图级别
+            center:[100.379391,30.861536] //初始化地图的中心点
+        });
+
+        // 设置地图的显示范围
+        var myBounds = new AMap.Bounds([116.567542,39.997639],[116.22422,39.813285]);
+        map.setBounds(myBounds);
+
+        //设定显示限制
+        var bounds = map.getBounds();
+        map.setLimitBounds(bounds);
+
+        cityBtn.onclick = function() {
+            //设置当前的行政区
+            map.setCity(city.value);
+            //获取当前位置的行政区
+        }
+
+        // 解除范围限制
+        clear.onclick = function() {
+            if (this.innerText === "解除范围限制") {
+                map.clearLimitBounds();
+                this.innerText = "已解除范围限制";
+            } else {
+                map.setLimitBounds(map.getBounds());
+                this.innerText = "解除范围限制";
+            }
+        }
+
+        // 设置显示级别
+        zoomBtn.onclick = function() {
+            map.setZoom(zoomNode.value);
+        }
+
+
+        setInterval(function() {
+            map.getCity(function(info){
+                provinceInfoValue.innerHTML = info.province+'/'+info.district
+            });
+        }, 2000);
+
+        // 把当前点击时的经纬度设置成中心点。
+        //longitude 经度
+        //latitude 纬度
+        map.on('click',function(e){
+            map.setCenter([e.lnglat.lng,e.lnglat.lat])
+        });
+
+        // 显示所在的省市
+        map.getCity(function(info){
+            provinceInfoValue.innerHTML = info.province+'/'+info.district
+        });
+        map.on('moveend',function(e){
+             map.getCity(function(info){
+                provinceInfoValue.innerHTML = info.province+'/'+info.district
+             });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <canvas id="myCanvas"  width="600px" height="400px">
+      您的浏览器不支持canvas
+    </canvas>
+    <script  type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        var img = new Image();
+        img.src = "logo.png";
+        img.onload = function () {
+            //创建图像画刷，no-repeat,repeat-x,repeat-y,repeat
+            var pattern = ctx.createPattern(img, "repeat");
+            ctx.fillStyle = pattern;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e"></script> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        #setZoomNode,#setCenterNode{width: 300px;height: 100px;position: absolute;z-index: 99;right: 20px;top: 20px;border: 1px solid black;box-shadow: 0 0 5px black;background: white;}
+
+    </style>
+</head>
+<body>
+	<div id="container"></div> 
+    <div id='setCenterNode'>
+        <input type="" name="" id='xNode'>
+        <input type="" name="" id='yNode'>
+        <button id='btn'>确定</button>
+
+    </div>
+    <!--
+    <div id='setZoomNode'>
+        <input type="text" name="" id='zoomVal'>
+        <button id='btn'>确定</button>
+    </div>
+    -->
+	<script type="text/javascript">
+		var map = new AMap.Map('container',{
+            zoom:11, //初始的地图级别
+            center:[121,30] //初始化地图的中心点
+        });
+
+        // console.log(map.getZoom());
+        console.log(map.getCenter().toString());
+
+        //通过事件来给予中心点
+        btn.onclick = function(){
+            map.setCenter([xNode.value,yNode.value]);
+        };
+
+        //设置地图的中心点
+        /*
+        setTimeout(function(){
+            map.setCenter([121.222,30]);
+        },5000);
+        */
+
+
+        //设置地图的级别
+        /*
+        setTimeout(function(){
+          map.setZoom(15);
+        },5000);
+        */
+
+        //通过事件来给它设定级别
+        /*
+        btn.onclick = function(){
+            map.setZoom(zoomVal.value);
+        };
+        */
+
+        map.on('moveend',function(){
+            console.log(map.getZoom());
+            console.log(map.getCenter().toString());
+        })
+
+        map.on('zoomend',function(){
+            console.log(map.getZoom());
+            console.log(map.getCenter().toString());
+        });
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <canvas id="myCanvas"  width="600px" height="400px">
+      您的浏览器不支持canvas
+    </canvas>
+    <script  type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        //绘制圆弧
+        ctx.arc(100, 100, 50, 0 ,Math.PI*2, true);
+        ctx.fill();
+
+        //绘制二次样条曲线
+        ctx.beginPath();
+        ctx.moveTo(100,355);
+        ctx.quadraticCurveTo(265,145,380,349);
+        ctx.fill();
+
+        //绘制贝塞尔曲线
+        ctx.beginPath();
+        ctx.moveTo(175,375);
+        ctx.bezierCurveTo(297,182,468,252,517,380);
+        ctx.fill();
+     </script>
+</body>
+</html>

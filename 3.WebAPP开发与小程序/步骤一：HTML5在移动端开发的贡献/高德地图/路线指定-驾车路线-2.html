@@ -1,0 +1,106 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=e22196035aaa10db3b0b6eb1ab64619e&plugin=AMap.Driving,AMap.Autocomplete"></script> 
+    <style type="text/css">
+    	*{margin: 0;padding: 0;list-style: none;}
+    	#container{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+        
+        #panel{
+            position: fixed;
+            background: white;
+            top: 10px;
+            right: 10px;
+            width: 280px;
+        }
+        #search{width: 200px;height: 100px;position: absolute;left: 10px;top: 10px;background: white;}
+
+    </style>
+</head>
+<body>
+	<div id="container"></div> 
+    <div id='panel'></div>
+    <div id='search'>
+        起点:<input type="" name="" id='startNode'><br>
+        终点:<input type="" name="" id='endNode'><br>
+        <button id='btn'>开始导航</button>
+    </div>
+
+    
+	<script type="text/javascript">
+        var map = new AMap.Map('container',{
+            zoom:11,
+            center:[116.379391,39.861536],
+        });
+
+        new AMap.Autocomplete({
+            input:'startNode'
+        });
+
+        new AMap.Autocomplete({
+            input:'endNode'
+        });
+
+        var num = 0, arr = [];
+
+        map.on('click',function(e){
+        //    console.log(e.lnglat)
+            num++;
+            if(num%2 == 1){
+                arr = [e.lnglat.R,e.lnglat.P];
+            }
+            else{
+                new AMap.Driving({
+                    map:map,
+                    panel:'panel'
+                    }).search(new AMap.LngLat(arr[0],arr[1]),new AMap.LngLat(e.lnglat.R,e.lnglat.P),function(status,data){
+                        console.log(data);
+                })
+                //arr = [];
+            }
+        });
+
+
+
+
+         
+
+/*
+        btn.onclick = function(){
+            new AMap.Driving({
+            map:map,
+            panel:'panel'
+            }).search([
+                {keyword:startNode.value,city:'北京'},
+                {keyword:endNode.value,city:'北京'}
+            ],function(status,data){
+                console.log(data);
+            })
+        };
+*/
+        
+
+
+
+        
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

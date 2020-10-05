@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <canvas id="myCanvas"  width="600px" height="400px">
+      您的浏览器不支持canvas
+    </canvas>
+    <script  type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        //线性渐变
+        var linearGradient = ctx.createLinearGradient(0, 0, 200, 0);
+        //给渐变添加颜色
+        linearGradient.addColorStop(0, 'rgb(255,0,0)');
+        linearGradient.addColorStop(0.3, 'rgb(0,255,0)');
+        linearGradient.addColorStop(1, 'rgb(0,0,255)');
+        //设置渐变作为样式
+        ctx.fillStyle = linearGradient;
+        ctx.fillRect(0, 0, 200, 200);
+
+        //径向渐变
+        var radialGradient = ctx.createRadialGradient(400, 50, 0, 400, 150, 100);
+        radialGradient.addColorStop(0, 'rgb(255,255,0)');
+        radialGradient.addColorStop(1, 'rgb(0,0,0)');
+        ctx.fillStyle = radialGradient;
+        ctx.beginPath();
+        ctx.arc(400, 150, 100, 0, Math.PI * 2, true);
+        ctx.fill();
+    </script>
+</body>
+</html>

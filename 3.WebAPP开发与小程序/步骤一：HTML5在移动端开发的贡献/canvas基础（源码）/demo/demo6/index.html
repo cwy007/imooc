@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <canvas id="myCanvas"  width="600px" height="400px">
+      您的浏览器不支持canvas
+    </canvas>
+    <script  type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var str = "hello world";
+        //设置文本样式，比如大小，字体
+        ctx.font = "50px sans-serif";
+        //水平对其设置，left center right
+        ctx.textAlign = "center";
+        //垂直对齐设置，top middle bottom
+        ctx.textBaseline = "top";
+        //填充文本
+        ctx.fillText(str,300,0);
+        //描边文本
+        ctx.strokeText(str,0,200);
+
+        //获取文本宽度
+        var width = ctx.measureText(str).width;
+        console.log(width);
+    </script>
+</body>
+</html>

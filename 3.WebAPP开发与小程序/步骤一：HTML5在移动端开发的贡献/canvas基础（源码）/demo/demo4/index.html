@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas"  width="600px" height="400px">
+    您的浏览器不支持canvas
+  </canvas>
+  <script  type="text/javascript">
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+
+      ctx.strokeStyle = "#00F";
+      //save 保存当前绘画环境，包括变换和样式
+      ctx.save();
+
+      ctx.moveTo(0,0);
+      ctx.lineTo(100,100);
+      ctx.stroke();
+
+      //translate 平移变换
+      ctx.translate(0,100);
+      ctx.beginPath();
+      ctx.moveTo(0,0);
+      ctx.lineTo(100,100);
+      ctx.stroke();
+
+      //rotate 旋转变换
+      ctx.rotate(Math.PI/4);
+      ctx.beginPath();
+      ctx.moveTo(0,0);
+      ctx.lineTo(100,100);
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = "#F00";
+      ctx.stroke();
+
+      //scale 缩放变换
+      ctx.scale(1,0.5);
+      ctx.fillRect(0,-100,100,100);
+      //restore 恢复当前绘画环境，包括变换和样式
+      ctx.restore();
+
+      ctx.beginPath();
+      ctx.moveTo(200,200);
+      ctx.lineTo(300,300);
+      ctx.stroke();
+
+      //一个时钟表盘的简单案例
+      ctx.translate(400,100);
+      ctx.beginPath();
+      ctx.arc(0,0,50,0,Math.PI*2,true);
+      ctx.stroke();
+      ctx.beginPath();
+      for(var i=0;i<12;i++){
+          ctx.rotate(Math.PI/6);
+          ctx.moveTo(40,0);
+          ctx.lineTo(50,0);
+      }
+      ctx.stroke();
+
+  </script>
+</body>
+</html>

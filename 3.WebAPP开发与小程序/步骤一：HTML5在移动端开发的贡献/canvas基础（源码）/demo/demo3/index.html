@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>canvas</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas"  width="600px" height="400px">
+    您的浏览器不支持canvas
+  </canvas>
+  <script  type="text/javascript">
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+
+      ctx.moveTo(0,0);
+      ctx.lineTo(100,100);
+      ctx.lineTo(100,200);
+      ctx.closePath();
+      //lineWidth 设置描边的线宽
+      ctx.lineWidth = 10;
+      //strokeStyle 设置描边样式
+      ctx.strokeStyle = "#F00";
+      ctx.stroke();
+      //fillStyle 设置填充样式
+      ctx.fillStyle = "rgba(0,255,0,0.5)";
+      ctx.fill();
+
+      ctx.strokeRect(100,200,100,100);
+      ctx.fillRect(100,200,100,100);
+
+      ctx.beginPath();
+      ctx.arc(300,100,50,0,2*Math.PI,true);
+      ctx.fillStyle = "rgba(0,0,255,0.5)";
+      ctx.fill();
+
+  </script>
+</body>
+</html>

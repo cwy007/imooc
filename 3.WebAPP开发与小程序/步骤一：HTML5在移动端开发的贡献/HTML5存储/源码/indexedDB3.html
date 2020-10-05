@@ -1,0 +1,84 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	var request = indexedDB.open('testDBLeo',20);
+	//如果你有这个数据 那好咱们就打开， 没有 就创建
+	//版本号只能往上走 不可以降 
+	console.log(request);
+	request.onsuccess = function(){
+		console.log('创建数据库成功');
+	};
+
+	request.onerror = function(){
+		console.log('数据库读取失败');
+	};
+
+	request.onupgradeneeded = function(){
+		var db = request.result;
+		//console.log(db);
+		db.createObjectStore('test3',{autoIncrement: true}
+);
+		//console.log('版本号升级了')
+	};
+
+	var json = [{
+		"id":200,
+		"name":"Modoy",
+		"age":"15"
+	},{
+		"id":201,
+		"name":"Busy",
+		"age":"21"
+	},{
+		"id":202,
+		"name":"Blue",
+		"age":"23"
+	}]
+
+
+	setTimeout(function(){
+		var db = request.result;
+		var transaction = db.transaction('test3','readwrite');
+		var store = transaction.objectStore('test3');
+		//store.add(json);
+		
+
+		store.put({
+			"id":203,
+			"name":"Sky",
+			"age":"29"
+		});
+		//var requestNode = store.get(1);
+		/*
+		for(var i = 0;i < json.length;i++){
+			store.add(json[i]);
+		};
+		*/
+		
+		/*
+		var requestNode = store.getAll();
+		
+		requestNode.onsuccess = function(){
+			//console.log(requestNode);
+			for(var i = 0;i < requestNode.result.length;i++){
+				console.log('名字叫'+requestNode.result[i].name);
+				console.log('年龄今年已经'+requestNode.result[i].age+'岁了');
+			}
+			//console.log('名字叫'+requestNode.result.name);
+			//console.log('年龄今年已经'+requestNode.result.age+'岁了');
+		};
+		*/
+		
+
+	},300);
+
+
+</script>
+
+</body>
+</html>

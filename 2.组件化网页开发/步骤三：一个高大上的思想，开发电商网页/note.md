@@ -130,3 +130,11 @@ dom操作 vs 变量
   },
 
 [VScode如何根据不同文件类型设置诸如tab的长度、ruler位置等选项？](https://www.zhihu.com/question/49624784)
+
+http://127.0.0.1:5500/2.%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E4%B8%80%E4%B8%AA%E9%AB%98%E5%A4%A7%E4%B8%8A%E7%9A%84%E6%80%9D%E6%83%B3%EF%BC%8C%E5%BC%80%E5%8F%91%E7%94%B5%E5%95%86%E7%BD%91%E9%A1%B5/%E6%85%95%E6%B7%98%E7%BD%91%E4%B9%8B%E4%B8%AD%E5%BF%83focus%E5%8C%BA%E7%BB%84%E4%BB%B6%E5%8C%96--%E5%88%86%E6%AD%A5%E4%BB%A3%E7%A0%81/1-4%20%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB%E7%9A%84css%E6%A0%B7%E5%BC%8F2--%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85/index.html
+
+```jquery
+$.each
+通过return false跳出当前循环
+
+```

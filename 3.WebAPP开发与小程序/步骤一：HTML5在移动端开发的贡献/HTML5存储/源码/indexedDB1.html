@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	var request = indexedDB.open('testDBLeo',6);
+	//如果你有这个数据 那好咱们就打开， 没有 就创建
+	//版本号只能往上走 不可以降 
+	console.log(request);
+	request.onsuccess = function(){
+		console.log('创建数据库成功');
+	};
+
+	request.onerror = function(){
+		console.log('数据库读取失败');
+	};
+
+	request.onupgradeneeded = function(){
+		console.log('版本号升级了')
+	};
+
+</script>
+
+</body>
+</html>

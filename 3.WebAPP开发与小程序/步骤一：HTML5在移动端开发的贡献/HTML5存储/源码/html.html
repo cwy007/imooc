@@ -1,0 +1,40 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	储存数据:
+	<input type="" name="" id='need'>
+	储存数据的时间:
+	<input type="" name="" id='timer'>
+	<button id='btn'>保存</button>
+	数据展示:
+	<span id='span'>暂无数据</span>
+
+	<script type="text/javascript">
+		//console.log(localStorage)
+		var nowTime = new Date().getMinutes();
+
+		if(nowTime >= localStorage.timer){
+			localStorage.clear();
+		}
+		else{
+			if(localStorage.leo){
+				span.innerHTML = localStorage.leo;
+			}
+
+		}
+
+		btn.onclick = function(){
+			localStorage.setItem('leo',need.value);
+			localStorage.setItem('timer',new Date().getMinutes() + Number(timer.value));
+			span.innerHTML = localStorage.leo;
+		};
+
+
+
+	</script>
+</body>
+</html>
