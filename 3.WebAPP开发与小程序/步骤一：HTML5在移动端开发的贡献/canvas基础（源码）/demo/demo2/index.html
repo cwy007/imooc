@@ -17,11 +17,12 @@
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext('2d');
 
+      // 内存中的路径
       ctx.moveTo(0, 0);
       ctx.lineTo(100, 100);
       ctx.lineTo(100, 200);
       ctx.strokeStyle = '#F00';
-      ctx.stroke();
+      ctx.stroke(); // 真正绘制
 
       ctx.beginPath();
       ctx.moveTo(300, 0);
