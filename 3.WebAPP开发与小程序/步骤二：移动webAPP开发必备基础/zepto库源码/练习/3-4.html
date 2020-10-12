@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .pink {
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+        }
+
+        .smallbox {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<div id="btn">点击这里！</div>
+<div id="box" class="pink"></div>
+<script src="https://cdn.bootcss.com/zepto/1.1.7/zepto.min.js"></script>
+<script>
+/*此处写代码*/
+$(document).ready(function() {
+    $('#btn').click(function() {
+        $('#box').append("<div class='smallbox'>我是smallbox内容</div>");
+
+        $('.smallbox').click(function() {
+            alert("已执行");
+        });
+    });
+});
+</script>
+</body>
+</html>

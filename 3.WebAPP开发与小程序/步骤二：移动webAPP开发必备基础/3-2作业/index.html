@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-2作业</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid-flex.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 第一区域 -->
+    <header class="header-container">
+        <div class="container">
+            <!-- ipad 中显示的导航连接 -->
+            <div class="row">
+                <nav class="header-nav-container d-none d-md-block">
+                    <ul class="header-nav">
+                        <li class="header-nav-item">
+                            <a href="###" class="header-nav-link active">前端</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="###" class="header-nav-link">Java</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="###" class="header-nav-link">ios</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="###" class="header-nav-link">Android</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="###" class="header-nav-link">php</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- iPhone6中的导航区域 -->
+            <div class="row">
+                <!-- 手机按钮 -->
+                <div class="header-btn-container col d-md-none">
+                    imooc<button class="btn-toggle" id="btn-toggle"></button>
+                </div>
+                <!-- 点击手机按钮显示的下拉按钮 -->
+                <ul class="nav-container d-md-none" id="nav-container">
+                    <li><a href="###" class="nav-link">前端</a></li>
+                    <li><a href="###" class="nav-link">Java</a></li>
+                    <li><a href="###" class="nav-link">ios</a></li>
+                    <li><a href="###" class="nav-link">Android</a></li>
+                    <li><a href="###" class="nav-link">php</a></li>
+                </ul>
+            </div>
+
+            <!-- 图片和开始按钮 -->
+            <div class="row">
+                <div class="header-img-container">
+                    <img src="img/1.png" alt="1.png" class="header-img">
+                    <span class="header-img-text">IMOOC</span>
+                </div>
+                <div class="start-btn-container col-12">
+                    <a href="###" class="start-btn">start</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 第二区域 -->
+    <section class="section-2-container">
+        <div class="container">
+            <div class="row">
+                <div class="section-2-nav-container">
+                    <a href="###" class="section-2-nav-item active">关于慕课网</a>
+                    <a href="###" class="section-2-nav-item">关于课程</a>
+                    <a href="###" class="section-2-nav-item">核心团队</a>
+                    <a href="###" class="section-2-nav-item">新增专题</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三区域 -->
+    <section class="section-3-container">
+        <div class="container">
+            <div class="row">
+                <h4 class="col-6 col-offset-3">响应式</h4>
+            </div>
+            <div class="row">
+                <p class="col-6 col-offset-3">
+                    媒介查询的大部分媒介特性都接受min和max用于表达”大于或等于”和”小于或等于”。如：width会有min-width和max-width媒介查询可以被用在CSS中的@media和@import规则上，也可以被用在HTML和XML中。通过这个标签属性，我们可以很方便的在不同的设备下实现丰富的界面，特别是移动设备，将会运用更加的广泛。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四区域 -->
+    <section class="section-4-container">
+        <div class="container">
+            <div class="row">
+                <div class="left col-md">IMOOC</div>
+                <div class="right col-md">welcome to <a href="###">www.imooc.com</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第五区域 -->
+    <section class="section-5-container">
+        <div class="container">
+            <div class="row">
+                <div class="title col">主打课程</div>
+            </div>
+            <div class="row">
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/1.jpg"></a>
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/2.jpg"></a>
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/3.jpg"></a>
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/4.jpg"></a>
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/5.jpg"></a>
+                <a href="###" class="col-6 col-md-4"><img class="section-5-img" src="img/6.jpg"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        Copyright &copy; 2020 imooc.com All Right Reserved
+    </footer>
+
+    <script>
+        var btnToggle = document.getElementById("btn-toggle");
+        var nav = document.getElementById('nav-container');
+        var navExtendedClassName = 'nav-container-extended';
+
+        btnToggle.onclick = function() {
+            if (nav.classList.contains(navExtendedClassName)) {
+                nav.classList.remove(navExtendedClassName);
+            } else {
+                nav.classList.add(navExtendedClassName);
+            }
+        };
+    </script>
+</body>
+</html>

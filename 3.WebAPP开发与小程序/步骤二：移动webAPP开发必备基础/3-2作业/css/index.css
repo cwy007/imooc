@@ -1,0 +1,222 @@
+/* 布局开始 */
+/* 第一区域 */
+.header-container {
+    background-color: #b2c5cc;
+    height: 700px;
+}
+
+.header-nav-container,
+.header-nav {
+    width: 100%;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+.header-nav-item {
+    width: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-img-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-btn-container {
+    height: 80px;
+    background-color: #7ea6b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-toggle {
+    position: absolute;
+    right: 30px;
+    border: 2px solid #aac8cf;
+    background-color: #7ea6b1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #7ea6b1;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.nav-container-extended {
+    height: 219px;
+}
+
+.nav-container li {
+    border-bottom: 1px solid #aac8cf;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.header-nav-link {
+    color: #757575;
+    text-decoration: none;
+}
+
+.header-nav-link.active {
+    color: #afafaf;
+    background-color: rgb(255,255,255);
+}
+
+.header-img {
+    margin: 50px 0 45px;
+}
+
+.header-img-text {
+    color: #fafafa;
+    font-size: 16px;
+}
+
+.start-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn {
+    margin-top: 80px;
+    font-size: 20px;
+    color: #757575;
+    text-decoration: none;
+    width: 155px;
+    height: 45px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 45px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 第2区 */
+.section-2-container {
+    border-bottom: 1px solid #cccccc;
+}
+
+.section-2-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.section-2-nav-item {
+    text-decoration: none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: #bababa;
+}
+
+.section-2-nav-item.active {
+    color: #545454;
+}
+
+/* 第三区域 */
+.section-3-container {
+  padding: 110px 0 50px 0;
+}
+.section-3-container h4 {
+    text-align: center;
+    font-size: 24px;
+    color: #545454;
+}
+
+.section-3-container p {
+    font-size: 16px;
+    margin-top: 25px;
+    line-height: 30px;
+    color: #bababa;
+}
+
+/* 第4区域 */
+
+.section-4-container {
+    background-color: #f4f4f4;
+    text-align: center;
+    line-height:35px;
+    color: #bababa;
+}
+
+.section-4-container .right a {
+    text-decoration: none;
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    .section-4-container {
+        line-height: 80px;
+    }
+    .section-4-container .left {
+        text-align: left;
+    }
+    .section-4-container .right {
+        text-align: right;
+    }
+}
+
+/* 第五区域 */
+.section-5-container {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    padding: 75px 40px;
+    color: #bababa;
+}
+
+.section-5-img {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 0 0;
+}
+.section-5-container a:nth-child(2n) .section-5-img {
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .section-5-container a:nth-child(2n) .section-5-img {
+        padding-right: 20px;
+    }
+    .section-5-container a:nth-child(3n) .section-5-img {
+        padding-right: 0;
+    }
+}
+
+/* 第六区域 */
+.footer {
+    height: 65px;
+    background-color: #f1f1f1;
+    color: #000;
+    line-height: 65px;
+    text-align: center;
+}
