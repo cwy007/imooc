@@ -23,9 +23,9 @@
 
     var page = 0;
     var isLoading = false;
-    /** 
+    /**
     *  获取商家列表数据
-    *  param 
+    *  param
     */
     function getList(){
         page++;
@@ -37,11 +37,11 @@
 
             initContentList(list);
             isLoading = false;
-            
+
         });
     }
 
-    /** 
+    /**
     *  渲染是否时新到热门品牌标签
     *  param {} data
     */
@@ -53,7 +53,7 @@
         }
     }
 
-    /** 
+    /**
     *  渲染月售
     *  param {} data
     */
@@ -68,7 +68,7 @@
         return num
     }
 
-    /** 
+    /**
     *  渲染商家活动
     *  param {} data
     */
@@ -99,7 +99,7 @@
         return str;
     }
 
-    /** 
+    /**
     *  渲染列表数据
     *  param []
     */
@@ -119,7 +119,7 @@
                       .replace('$others',getOthers(item))
 
                       .replace('$wm_poi_score', new StarScore(item.wm_poi_score).getStars())
-                      
+
 
             $('.list-wrap').append($(str));
         })
@@ -135,7 +135,7 @@
 
             var proDis = 30;
             if ((scrollTop + clientHeight) >= (scrollHeight-proDis)) {
-                
+
 
                 // 最多滚动加载3页
                 if (page < 3) {
@@ -148,14 +148,26 @@
                 }else {
                     $('.loading').text('加载完成');
                 }
-
-                
             }
         });
+
+        setTimeout(jumpToMenuPage, 1000);
     }
 
 
+    /**
+    *  点击商家图片跳转到订餐也，开发调试用
+    *  param
+    */
+    function jumpToMenuPage() {
+        // console.log('cwy;1')
+        // console.log('cwy', $(".r-item-content .item-img"));
 
+        $(".r-item-content .item-img").click(function () {
+            console.log('cwy;1')
+            window.location.href = "../menu/menu.html";
+        })
+    }
 
     function init() {
         getList();

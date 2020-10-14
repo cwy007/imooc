@@ -44,7 +44,7 @@
     height: 0.4rem;
     font-size: 0.32rem;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1.000012px solid #fff;
     border-radius: 50%;
     right: 0;
     top: 0.053333rem;
@@ -67,7 +67,7 @@
 .choose-content {
     background-color: #fff;
     overflow: auto;
-    max-height: 8rem;
+    max-width: 8rem;
 }
 
 .choose-content .content-top {
@@ -110,7 +110,7 @@
     align-items: center;
     padding-top: 0.266667rem;
     padding-bottom: 0.266667rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.026667rem solid #ddd;
 }
 .choose-content .choose-item .price {
     margin-left: 0.133333rem;

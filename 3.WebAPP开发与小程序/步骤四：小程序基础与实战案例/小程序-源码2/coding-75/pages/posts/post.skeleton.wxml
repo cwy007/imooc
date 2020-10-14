@@ -1,0 +1,58 @@
+<!--
+此文件为开发者工具生成，生成时间: 10/14/2020, 11:18:37 AM 
+使用方法：
+在 /Users/chanweiyan/imooc/3.WebAPP开发与小程序/步骤四：小程序基础与实战案例/小程序-源码2/coding-75/pages/posts/post.wxml 引入模板
+
+```
+<import src="post.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/chanweiyan/imooc/3.WebAPP开发与小程序/步骤四：小程序基础与实战案例/小程序-源码2/coding-75/pages/posts/post.wxss 中引入样式
+```
+@import "./post.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <swiper autoplay="false" indicator-dots="true" interval="5000" current="0">
+        <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+          <image data-postid="3" id="7" class="sk-image"></image>
+        </swiper-item>
+      </swiper>
+      <view data-postid="0">
+        <view class="post-container" style="border: none;">
+          <view class="post-author-date">
+            <image class="post-author sk-image"></image>
+            <text class="post-date sk-transparent sk-text-14-2857-90 sk-text">Sep 18 2016</text>
+          </view>
+          <text class="post-title sk-transparent sk-text-14-2857-157 sk-text">正是虾肥蟹壮时</text>
+          <image class="post-image sk-image"></image>
+          <text class="post-content sk-transparent sk-text-15-0000-334 sk-text">菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，
+            </text>
+          <view class="post-like">
+            <image class="post-like-image sk-image"></image>
+            <text class="post-like-font sk-transparent sk-text-12-5000-660 sk-text">96</text>
+            <image class="post-like-image sk-image"></image>
+            <text class="post-like-font sk-transparent sk-text-12-5000-334 sk-text">112</text>
+          </view>
+        </view>
+      </view>
+      <view data-postid="1">
+        <view class="post-container" style="border: none;">
+          <view class="post-author-date">
+            <image class="post-author sk-image"></image>
+            <text class="post-date sk-transparent sk-text-14-2857-655 sk-text">Nov 20 2016</text>
+          </view>
+          <text class="post-title sk-transparent sk-text-14-2857-324 sk-text">比利·林恩的中场故事</text>
+          <image class="post-image sk-image"></image>
+          <text class="post-content sk-transparent sk-text-15-0000-542 sk-text">一 “李安是一位绝不会重复自己的导演，本片将极富原创性李安众所瞩目的新片《比利林恩漫长的中场休息》，正式更名《半场无战事》。
+            </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
