@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <body>
+        <div id="app">
+            <!-- 在此补充代码 -->
+            <input type="text" v-model="inputValue">
+            <button v-on:click="handleSubmit">添加</button>
+            <button v-on:click="handleDelete">删除</button>
+            <ul>
+                <todo-item v-bind:content="item"
+                           v-for="item in list">
+                </todo-item>
+            </ul>
+        </div>
+        <script>
+            // 在此补充代码
+            // 全局组件
+            // Vue.component('TodoItem', {
+            //     props: ['content'], // 接受父组件传递的数据
+            //     template: '<li>{{content}}</li>'
+            // });
+
+            // 局部组件
+            var TodoItem = {
+                props: ['content'],
+                template: '<li>{{content}}</li>'
+            };
+
+            var app = new Vue({
+                el: "#app", // 指定由vue接管的dom节点
+                // 在此补充代码
+                data: { // model层，数据都放在这里
+                    inputValue: '',
+                    list: []
+                },
+                methods: { // 方法定义在这里
+                    handleSubmit: function() {
+                        this.list.push(this.inputValue);
+                        this.inputValue = '';
+                    },
+                    handleDelete: function() {
+                        this.list.pop();
+                    }
+                },
+                components: { // 注册局部组件
+                    TodoItem: TodoItem,
+                }
+            });
+
+            // 在外面获取数据
+            // app.$data.list
+        </script>
+    </body>
+</html>

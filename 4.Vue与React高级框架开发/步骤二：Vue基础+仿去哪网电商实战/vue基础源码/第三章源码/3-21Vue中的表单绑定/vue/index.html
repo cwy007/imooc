@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue中的表单绑定</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <input type="text" v-model.trim="value"/>
+    {{value}}
+  </div>
+  <script>  
+    new Vue({
+      el: "#root",
+      data: {
+        value: ""
+      },
+      watch: {
+        value: function() {
+          console.log(typeof this.value)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插槽 - 单个插槽</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+
+  <div id="root">
+    <child>
+      <h1>hello</h1>
+    </child>
+  </div>
+
+  <script>
+
+    var child = {
+      template: '<div><slot>默认插槽的内容</slot></div>'
+    }
+
+    var vm = new Vue({
+      components: {
+        child: child
+      },
+      el: "#root"
+    })
+  </script>
+
+</body>
+</html>

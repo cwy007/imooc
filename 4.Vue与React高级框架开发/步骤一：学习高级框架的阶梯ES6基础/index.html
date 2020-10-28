@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>模版字符串</title>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            const tmpl = function () {
+                return {
+                    title: "前端",
+                    data: [{
+                        title: '布局基础',
+                        date: ["html", "css"]
+                    }, {
+                        title: '网页特效',
+                        date: ["javascript", "jquery"]
+                    }, {
+                        title: '框架',
+                        date: ["bootstrap", "vue"]
+                    }]
+                }
+            };
+
+            // 补充代码
+            let {title, data} = tmpl();
+            let arr = [];
+            for (let i = 0; i < data.length; i++) {
+                let tr = `
+                    <tr border=1>
+                        <td>${data[i].title}</td>
+                        <td>${data[i].date[0]}</td>
+                        <td>${data[i].date[1]}</td>
+                    </tr>
+                `
+                arr.push(tr);
+            }
+            let table = document.createElement('table');
+            let caption = document.createElement('caption');
+            caption.innerText = title;
+            table.appendChild(caption);
+            table.innerHTML += arr.join('');
+            document.body.appendChild(table);
+        </script>
+    </body>
+
+</html>
